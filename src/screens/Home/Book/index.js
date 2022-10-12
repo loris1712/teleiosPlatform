@@ -79,10 +79,9 @@ const Book = () => {
           </ScrollParallax>
         </div>
         <div className={styles.wrap}>
-          <h2 className={cn("h2", styles.title)}>Book a class</h2>
+          <h2 className={cn("h2", styles.title)}>Diversi livelli</h2>
           <div className={styles.info}>
-            Track your workouts, get better results, and be the best version of
-            you. Less thinking, more lifting.
+            Possiamo pensare di selezionare diverse tipologie di scheda
           </div>
           <div className={styles.list}>
             {items.map((x, index) => (
@@ -107,7 +106,7 @@ const Book = () => {
           </div>
           <div className={styles.btns}>
             <Link className={cn("button", styles.button)} to="/class02-details">
-              <span>Book a class</span>
+              <span>Crea scheda</span>
               <Icon name="arrow-right" size="10" />
             </Link>
           </div>

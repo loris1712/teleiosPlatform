@@ -9,23 +9,23 @@ import Image from "../Image";
 
 const menu = [
   {
-    title: "Lifestyle",
-    url: "/lifestyle",
+    title: "Home",
+    url: "/",
   },
   {
-    title: "Pricing",
+    title: "Prezzi",
     url: "/pricing",
   },
   {
-    title: "Class",
+    title: "Blog",
     url: "/class01",
   },
   {
-    title: "Features",
+    title: "Chi siamo",
     url: "/features",
   },
   {
-    title: "Download",
+    title: "Contattaci",
     url: "/download",
   },
 ];
@@ -46,7 +46,7 @@ const socials = [
     size: "16",
     url: "https://www.instagram.com/ui8net/",
   },
-  {
+  /*{
     title: "dribbble",
     size: "16",
     url: "https://dribbble.com/ui8",
@@ -55,7 +55,7 @@ const socials = [
     title: "behance",
     size: "20",
     url: "https://www.behance.net/ui8",
-  },
+  },*/
 ];
 
 const Footer = () => {
@@ -71,7 +71,7 @@ const Footer = () => {
                 <Image
                   className={styles.pic}
                   src="/images/logo-dark.svg"
-                  srcDark="/images/logo-light.svg"
+                  srcDark="/images/logo1.png"
                   alt="Fitness Pro"
                 />
               </Link>
@@ -100,23 +100,22 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.col}>
-            <div className={styles.category}>contact</div>
+            <div className={styles.category}>contatti</div>
             <div className={styles.info}>
-              <p>43252 Borer Mountains</p>
-              <p>Zackerychester</p>
-              <p>Bahamas</p>
-              <p>732-528-4945</p>
+              <p>Salerno, Italy</p>
+              <p>+39 327 406 2756</p>
+              <p>+39 330 602 145</p>
             </div>
           </div>
           <div className={styles.col}>
             <div className={styles.category}>newsletter</div>
             <div className={styles.info}>
-              Subscribe our newsletter to get more free design course and
-              resource.
+              Iscriviti alla nostra newsletter per ottenere più corsi di design
+              gratuiti e risorsa.
             </div>
             <Subscription
               className={styles.subscription}
-              placeholder="Enter your email"
+              placeholder="Inserisci la tua email"
             />
           </div>
         </div>
@@ -124,7 +123,7 @@ const Footer = () => {
       <div className={styles.foot}>
         <div className={cn("container", styles.container)}>
           <div className={styles.copyright}>
-            Copyright © 2021 UI8 LLC. All rights reserved
+            Copyright © 2022. Tutti i diritti riservati.
           </div>
           <div className={styles.socials}>
             {socials.map((x, index) => (

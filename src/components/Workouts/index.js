@@ -44,7 +44,7 @@ const Workouts = () => {
         </div>
         <div className={styles.wrap}>
           <h2 className={cn("h2", styles.title)}>
-            All your workouts, <br></br>in your pocket
+            Inizia il tuo percorso, <br></br>crea la tua scheda
           </h2>
           <div className={styles.info}>
             Fitness Pro helps track your workouts, get better results, and be
@@ -59,10 +59,10 @@ const Workouts = () => {
           </ul>
           <div className={styles.btns}>
             <Link className={cn("button", styles.button)} to="/pricing">
-              Choose Plan
+              Scegli il piano
             </Link>
             <button className={cn("button-stroke", styles.button)}>
-              Request a demo
+              Richiedi una demo
             </button>
           </div>
         </div>

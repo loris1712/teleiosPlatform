@@ -33,14 +33,13 @@ const Intro = ({ scrollToRef }) => {
         </div>
         <div className={styles.wrap}>
           <h2 className={cn("h1", styles.title)}>
-            Train smarter, get stronger.
+            Inseriamo un altro titolo che attira
           </h2>
           <div className={styles.text}>
-            Fitness Pro helps track your workouts, get better results, and be
-            the best version of you. Less thinking, more lifting 🔥🏀
+            Descrizione di come fare una scheda 🔥🏀
           </div>
           <Link className={cn("button", styles.button)} to="/download">
-            Start free trial
+            Prova gratuita
           </Link>
         </div>
       </div>

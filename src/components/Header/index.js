@@ -7,19 +7,7 @@ import Icon from "../Icon";
 import Image from "../Image";
 
 const navLinks = [
-  {
-    title: "Features",
-    url: "/features",
-  },
-  {
-    title: "Pricing",
-    url: "/pricing",
-  },
-  {
-    title: "Download",
-    url: "/download",
-  },
-  {
+  /*{
     title: "Class",
     content: {
       menu: [
@@ -103,10 +91,26 @@ const navLinks = [
         },
       ],
     },
+  },*/
+  {
+    title: "Home",
+    url: "/",
   },
   {
-    title: "Lifestyle",
-    url: "/lifestyle",
+    title: "Prezzi",
+    url: "/pricing",
+  },
+  {
+    title: "Chi siamo",
+    url: "/features",
+  },
+  {
+    title: "Contattaci",
+    url: "/download",
+  },
+  {
+    title: "Blog",
+    url: "/class01",
   },
 ];
 
@@ -130,16 +134,12 @@ const socials = [
 
 const contact = [
   {
-    title: "Montanachester",
-    content: "06787 Block Estates",
+    title: "Salerno",
+    content: "+39 327 406 2756 Italy",
   },
   {
-    title: "Lake Gene",
-    content: "167 Emard River",
-  },
-  {
-    title: "North Hassiefort",
-    content: "032 Leonora Spurs",
+    title: "Salerno",
+    content: "+39 330 602 145 Italy",
   },
 ];
 
@@ -157,8 +157,8 @@ const Headers = () => {
           <Image
             className={styles.pic}
             src="/images/logo-dark.svg"
-            srcDark="/images/logo-light.svg"
-            alt="Fitness Pro"
+            srcDark="/images/logo1.png"
+            alt="Teleios"
           />
         </Link>
         <div className={cn(styles.wrap, { [styles.active]: visibleNav })}>
@@ -210,7 +210,7 @@ const Headers = () => {
               className={cn("button-stroke button-small", styles.button)}
               to="/"
             >
-              Get free trial
+              Crea la tua scheda
             </Link>
           </div>
         </div>
@@ -218,7 +218,7 @@ const Headers = () => {
           className={cn("button-stroke button-small", styles.button)}
           to="/"
         >
-          Get free trial
+          Crea la tua scheda
         </Link>
         <button
           className={cn(styles.burger, { [styles.active]: visibleNav })}

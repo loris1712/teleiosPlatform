@@ -35,7 +35,7 @@ const Clients = () => {
     <div className={styles.clients}>
       <div className={cn("container", styles.container)}>
         <ScrollParallax className={styles.title}>
-          Trusted by more than 2M users worldwide
+          Qui inseriamo qualche partner
         </ScrollParallax>
         <div className={styles.list}>
           {list.map((x, index) => (

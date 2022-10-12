@@ -12,24 +12,24 @@ const Hero = ({ scrollToRef }) => {
       <div className={cn("container", styles.container)}>
         <ScrollParallax className={styles.wrap}>
           <div className={cn("stage", styles.stage)}>
-            Train smarter. get stronger
+            Mangia meglio. Allenati più forte
           </div>
           <h1 className={cn("h1", styles.title)}>
-            Simple fitness experience for everyone.
+            Allenamento, nutrizione, benessere.
           </h1>
           <div className={styles.text}>
-            Track your workouts, get better results, and be the bestversion of
-            you. Less thinking, more lifting.
+            Crea la tua scheda nutrizione e la scheda palestra su misura per te
+            con i migliori professionisti del settore.
           </div>
           <div className={styles.btns}>
             <Link className={cn("button", styles.button)} to="/download">
-              Download App
+              Scheda Palestra
             </Link>
             <Link
               className={cn("button-stroke", styles.button)}
               to="/class02-details"
             >
-              Book a Class
+              Scheda nutrizione
             </Link>
           </div>
         </ScrollParallax>

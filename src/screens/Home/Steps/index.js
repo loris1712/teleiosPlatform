@@ -39,10 +39,10 @@ const Steps = ({ scrollToRef }) => {
     <div className={cn("section", styles.section)} ref={scrollToRef}>
       <div className={cn("container", styles.container)}>
         <div className={styles.head}>
-          <h2 className={cn("h2", styles.title)}>How it works</h2>
+          <h2 className={cn("h2", styles.title)}>Come funziona</h2>
           <div className={styles.info}>
-            Stacks is a production-ready library of stackable content blocks
-            built in React Native.
+            Crea la tua scheda palestra e nutrizione su misura per te in pochi
+            passaggi.
           </div>
         </div>
         <div className={styles.list}>

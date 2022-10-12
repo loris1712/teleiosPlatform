@@ -27,7 +27,7 @@ const Advantages = () => {
       <div className={cn("container", styles.container)}>
         <div className={styles.head}>
           <div className={cn("h2", styles.title)}>
-            For any space, at any pace
+            Descrizione caratteristiche
           </div>
           <div className={styles.info}>
             From the comfort of your living room to a hotel room across the

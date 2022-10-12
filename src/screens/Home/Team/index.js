@@ -53,12 +53,8 @@ const Team = () => {
     <div className={styles.section}>
       <div className={cn("container", styles.container)}>
         <div className={styles.head}>
-          <h2 className={cn("h2", styles.title)}>Meet our pro trainers</h2>
-          <div className={styles.info}>
-            From all over the world, we select and provide you a team of
-            seasoned trainers. What's more, the 1-on-1 live practice mode helps
-            you quickly get great results.
-          </div>
+          <h2 className={cn("h2", styles.title)}>I professionisti</h2>
+          <div className={styles.info}>Inserire giovanni e roberto</div>
           <div className={styles.nav}>
             {trainersList.map((x, index) => (
               <button

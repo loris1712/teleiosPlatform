@@ -11,7 +11,7 @@ const Offer = ({ className }) => {
           try it free for 14 days 🎾
         </div>
         <h2 className={cn("h1", styles.title)}>
-          Anywhere you want. Anytime you want.
+          Questo pezzo lo possiamo anche eliminare, è una prova
         </h2>
         <div className={styles.text}>
           Get started with two free weeks of unlimited yoga, fitness, and
