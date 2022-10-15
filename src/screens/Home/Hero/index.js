@@ -22,7 +22,7 @@ const Hero = ({ scrollToRef }) => {
             con i migliori professionisti del settore.
           </div>
           <div className={styles.btns}>
-            <Link className={cn("button", styles.button)} to="/download">
+            <Link className={cn("button", styles.button)} to="/program">
               Scheda Palestra
             </Link>
             <Link
