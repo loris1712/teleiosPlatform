@@ -11,6 +11,7 @@ import Class02 from "./screens/Class02";
 import Class02Details from "./screens/Class02Details";
 import Lifestyle from "./screens/Lifestyle";
 import Article from "./screens/Article";
+import Program from "./screens/Program";
 
 function App() {
   return (
@@ -103,6 +104,15 @@ function App() {
           render={() => (
             <Page>
               <Article />
+            </Page>
+          )}
+        />
+        <Route
+          exact
+          path="/program"
+          render={() => (
+            <Page>
+              <Program />
             </Page>
           )}
         />
