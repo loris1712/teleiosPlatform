@@ -24,6 +24,7 @@ import Step15 from "./components/Step15";
 import Step16 from "./components/Step16";
 import Step17 from "./components/Step17";
 import Final from "./components/Final";
+import Steps from "../Steps";
 
 const Hero = ({ scrollToRef }) => {
   //state for steps
@@ -103,6 +104,7 @@ const Hero = ({ scrollToRef }) => {
               </div>
             </ScrollParallax>
           </div>
+          <Steps />
         </div>
       );
 

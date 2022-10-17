@@ -9,7 +9,6 @@ const Program = () => {
   return (
     <>
       <Hero scrollToRef={scrollToRef} />
-      <Steps scrollToRef={scrollToRef} />
     </>
   );
 };
