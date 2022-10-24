@@ -33,11 +33,7 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
     e.preventDefault();
 
     // checking if value of first name and last name is empty show error else take to step 2
-    if (validator.isEmpty(values.gambe)) {
-      setError(true);
-    } else {
-      nextStep();
-    }
+    nextStep();
   };
 
   const [level, setLevel] = useState(levelOptions[0]);
@@ -66,23 +62,37 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
               </svg>
             </div>
             <div className={cn("title", styles.title)}>
-              <div className={cn("number", styles.number)}>{step + 6}</div>
-              Qual è la tua percentuale di{" "}
-              <strong>&nbsp; grasso addominale?</strong>
+              <div className={cn("number", styles.number)}>{step + 3}</div>
+              Carica una foto frontale, laterale e da dietro per aiutarci a
+              capire meglio il punto di partenza
             </div>
-            <img
-              srcSet="https://lh5.googleusercontent.com/rLeSxaKuuUfpg8hOXDE8gcKA_aiiDmnVsGQvBOLQF0sPDm3y1NTjfDOwg7pFNUGZ7t0koS_r1v5wtlYVf-LlWJ7ILfjdEcEBSbAfELVUr-IyYuDW3wpCxBZMLvPP2rpQEA=w740 2x"
-              src="https://lh5.googleusercontent.com/rLeSxaKuuUfpg8hOXDE8gcKA_aiiDmnVsGQvBOLQF0sPDm3y1NTjfDOwg7pFNUGZ7t0koS_r1v5wtlYVf-LlWJ7ILfjdEcEBSbAfELVUr-IyYuDW3wpCxBZMLvPP2rpQEA=w740"
-              alt="grasso"
-              className={styles.preview}
-            />
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
-              <Dropdown
-                className={styles.dropdown}
-                value={level}
-                setValue={setLevel}
-                options={levelOptions}
-              />
+              <div className={cn("form", styles.fileDiv)}>
+                <Form.Group controlId="formFile" className="mb-3">
+                  <p className={cn("title", styles.textLabel)}>Frontale</p>
+                  <Form.Control
+                    className={cn("title", styles.formFile)}
+                    type="file"
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="formFile" className="mb-3">
+                  <p className={cn("title", styles.textLabel)}>Laterale</p>
+                  <Form.Control
+                    className={cn("title", styles.formFile)}
+                    type="file"
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="formFile" className="mb-3">
+                  <p className={cn("title", styles.textLabel)}>Dietro</p>
+                  <Form.Control
+                    className={cn("title", styles.formFile)}
+                    type="file"
+                  />
+                </Form.Group>
+              </div>
+
               <Button
                 variant="primary"
                 type="submit"

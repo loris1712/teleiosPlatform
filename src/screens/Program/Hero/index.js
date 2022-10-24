@@ -9,9 +9,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import StepOne from "./components/StepOne";
 import StepTwo from "./components/StepTwo";
 import Step3 from "./components/Step3";
-import Step4 from "./components/Step4";
-import Step5 from "./components/Step5";
-import Step6 from "./components/Step6";
 import Step7 from "./components/Step7";
 import Step8 from "./components/Step8";
 import Step9 from "./components/Step9";
@@ -21,8 +18,11 @@ import Step12 from "./components/Step12";
 import Step13 from "./components/Step13";
 import Step14 from "./components/Step14";
 import Step15 from "./components/Step15";
+import Step15_2 from "./components/Step15_2";
 import Step16 from "./components/Step16";
 import Step17 from "./components/Step17";
+import Step18 from "./components/Step18";
+import Step19 from "./components/Step19";
 import Final from "./components/Final";
 import Steps from "../Steps";
 
@@ -37,10 +37,7 @@ const Hero = ({ scrollToRef }) => {
     età: "",
     email: "",
     peso: "",
-    addome: "",
-    gambe: "",
-    somatotipo: "",
-    grasso: "",
+    altezza: "",
     stileVita: "",
     sport: "",
     obiettivo: "",
@@ -52,9 +49,12 @@ const Hero = ({ scrollToRef }) => {
     non_piace: "",
     non_piace_altro: "",
     quanti_pasti: "",
+    pasti_fuori: "",
     integratori: "",
     acconsente: "",
     note: "",
+    infosensibili: "",
+    liberatoriaMedica: "",
   });
 
   // function for going to next step by increasing step state by 1
@@ -97,7 +97,7 @@ const Hero = ({ scrollToRef }) => {
                 </div>
                 <div
                   className={cn("button-stroke", styles.button)}
-                  to="/class02-details"
+                  onClick={nextStep}
                 >
                   Scheda Nutrizione
                 </div>
@@ -171,7 +171,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step4
+                <Step7
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -190,7 +190,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step5
+                <Step8
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -209,7 +209,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step6
+                <Step9
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -228,7 +228,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step7
+                <Step10
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -247,7 +247,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step8
+                <Step11
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -266,7 +266,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step9
+                <Step12
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -285,7 +285,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step10
+                <Step13
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -304,7 +304,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step11
+                <Step14
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -323,7 +323,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step12
+                <Step15
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -342,7 +342,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step13
+                <Step15_2
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -361,7 +361,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step14
+                <Step16
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -380,7 +380,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step15
+                <Step17
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -399,7 +399,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step16
+                <Step18
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
@@ -418,7 +418,7 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step17
+                <Step19
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}

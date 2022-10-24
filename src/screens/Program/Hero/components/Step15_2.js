@@ -6,7 +6,7 @@ import cn from "classnames";
 import ScrollParallax from "../../../../components/ScrollParallax";
 
 // creating functional component ans getting props from app.js and destucturing them
-const Step3 = ({ prevStep, nextStep, handleFormData, values }) => {
+const Step15_2 = ({ prevStep, nextStep, handleFormData, values }) => {
   //creating error state for validation
   const [error, setError] = useState(false);
   const [step, setstep] = useState(1);
@@ -19,15 +19,8 @@ const Step3 = ({ prevStep, nextStep, handleFormData, values }) => {
   const submitFormData = (e) => {
     e.preventDefault();
 
-    // checking if value of first name and last name is empty show error else take to step 2
-    if (validator.isEmpty(values.età) || validator.isEmpty(values.peso)) {
-      setError(true);
-    } else {
-      nextStep();
-    }
+    nextStep();
   };
-
-  //per fare il condizionale facciamo che se values.valore è == yes oppure no allora di conseguenza sarà nextStep oppure nextStep2 che sarà dichiarato nell'altro file con un +2 e non +1.
 
   return (
     <div>
@@ -53,84 +46,25 @@ const Step3 = ({ prevStep, nextStep, handleFormData, values }) => {
               </svg>
             </div>
             <div className={cn("title", styles.title)}>
-              <div className={cn("number", styles.number)}>{step + 2}</div>
-              Inserisci il{" "}
-              <strong>&nbsp;Sesso, Anni, Peso (kg) e Altezza (cm)</strong>
+              <div className={cn("number", styles.number)}>{step + 12}</div>
+              Fai pasti <strong>&nbsp;regolarmente fuori casa?</strong>
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
-              <Form.Group>
-                {["radio"].map((type) => (
-                  <div
-                    key={`default-${type}`}
-                    className={cn("type", styles.type)}
-                  >
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Maschio`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="sesso"
-                      onChange={handleFormData("sesso")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Femmina`}
-                      name="sesso"
-                      className={cn("typeCheck", styles.typeCheck)}
-                      onChange={handleFormData("sesso")}
-                    />
-                  </div>
-                ))}
-
+              <Form.Group className="mb-3">
                 <Form.Control
                   style={{ border: error ? "2px solid red" : "" }}
-                  name="età"
-                  defaultValue={values.età}
+                  name="pasti_fuori"
+                  defaultValue={values.pasti_fuori}
                   type="text"
-                  placeholder="Anni"
+                  placeholder="Risposta non obbligatoria"
                   className={cn("input", styles.input)}
-                  onChange={handleFormData("età")}
+                  onChange={handleFormData("pasti_fuori")}
                 />
                 {error ? (
                   <Form.Text
                     className={cn("erroForm", styles.erroForm)}
                     style={{ color: "red" }}
                   >
-                    Campo obbligatorio
-                  </Form.Text>
-                ) : (
-                  ""
-                )}
-
-                <Form.Control
-                  style={{ border: error ? "2px solid red" : "" }}
-                  name="peso"
-                  defaultValue={values.peso}
-                  type="text"
-                  placeholder="Peso"
-                  className={cn("input", styles.input)}
-                  onChange={handleFormData("peso")}
-                />
-                {error ? (
-                  <Form.Text style={{ color: "red" }}>
-                    Campo obbligatorio
-                  </Form.Text>
-                ) : (
-                  ""
-                )}
-
-                <Form.Control
-                  style={{ border: error ? "2px solid red" : "" }}
-                  name="altezza"
-                  defaultValue={values.altezza}
-                  type="text"
-                  placeholder="Altezza"
-                  className={cn("input", styles.input)}
-                  onChange={handleFormData("altezza")}
-                />
-                {error ? (
-                  <Form.Text style={{ color: "red" }}>
                     Campo obbligatorio
                   </Form.Text>
                 ) : (
@@ -166,4 +100,4 @@ const Step3 = ({ prevStep, nextStep, handleFormData, values }) => {
   );
 };
 
-export default Step3;
+export default Step15_2;

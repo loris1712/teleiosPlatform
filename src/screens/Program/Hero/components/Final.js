@@ -1,5 +1,9 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import styles from "../Form.module.sass";
+import cn from "classnames";
+import Image from "../Image";
+import ScrollParallax from "../../../../components/ScrollParallax";
 
 const Final = ({ values }) => {
   //destructuring the object from values
@@ -7,31 +11,438 @@ const Final = ({ values }) => {
     firstName,
     età,
     email,
+    altezza,
+    allergie,
+    allergie_altro,
+    farmaci,
+    intestino,
+    intestino_altro,
+    non_piace,
+    non_piace_altro,
+    quanti_pasti,
+    pasti_fuori,
+    integratori,
+    acconsente,
+    note,
+    infosensibili,
+    liberatoriaMedica,
     peso,
-    addome,
-    gambe,
-    somatotipo,
-    grasso,
     stilevita,
     sport,
     obiettivo,
   } = values;
   return (
     <>
-      <Card style={{ marginTop: 100, textAlign: "left" }}>
-        <Card.Body>
-          <p>Risultato</p>
-          <p>
-            <strong>Nome :</strong> {firstName}{" "}
-          </p>
-          <p>
-            <strong>Età :</strong> {età}{" "}
-          </p>
-          <p>
-            <strong>Email :</strong> {email}{" "}
-          </p>
-        </Card.Body>
-      </Card>
+      <ScrollParallax className={cn("wrap", styles.wrap)}>
+        <Card className={cn("final", styles.final)}>
+          <div className={cn("finalHead", styles.finalHead)}>
+            <div className={cn("finalHeadLogo", styles.finalHeadLogo)}>
+              <Image
+                className={styles.pic}
+                srcDark="/images/logo2.png"
+                alt="Teleios"
+              />
+            </div>
+            <div className={cn("finalHeadText", styles.finalHeadText)}>
+              Mangia meglio. Allenati più forte.
+            </div>
+          </div>
+          <Card.Body className={cn("finalBody", styles.finalBody)}>
+            <p className={cn("finalBodyTitle", styles.finalBodyTitle)}>
+              Dati cliente
+            </p>
+            <div className={cn("finalBodyCard", styles.finalBodyCard)}>
+              <div
+                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
+              >
+                <div
+                  className={cn("finalBodyCardInfo", styles.finalBodyCardInfo)}
+                >
+                  <div
+                    className={cn(
+                      "finalBodyCardInfoTitle",
+                      styles.finalBodyCardInfoTitle
+                    )}
+                  >
+                    {firstName}{" "}
+                  </div>
+                  <div
+                    className={cn(
+                      "finalBodyCardInfoSubtitle",
+                      styles.finalBodyCardInfoSubtitle
+                    )}
+                  >
+                    Nome e Cognome
+                  </div>
+                </div>
+
+                <div
+                  className={cn("finalBodyCardInfo", styles.finalBodyCardInfo)}
+                >
+                  <div
+                    className={cn(
+                      "finalBodyCardInfoTitle",
+                      styles.finalBodyCardInfoTitle
+                    )}
+                  >
+                    {età}{" "}
+                  </div>
+                  <div
+                    className={cn(
+                      "finalBodyCardInfoSubtitle",
+                      styles.finalBodyCardInfoSubtitle
+                    )}
+                  >
+                    Età
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
+              >
+                <div
+                  className={cn("finalBodyCardInfo", styles.finalBodyCardInfo)}
+                >
+                  <div
+                    className={cn(
+                      "finalBodyCardInfoTitle",
+                      styles.finalBodyCardInfoTitle
+                    )}
+                  >
+                    {email}{" "}
+                  </div>
+                  <div
+                    className={cn(
+                      "finalBodyCardInfoSubtitle",
+                      styles.finalBodyCardInfoSubtitle
+                    )}
+                  >
+                    Email
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card.Body>
+
+          <Card.Body className={cn("finalBody", styles.finalBody)}>
+            <p className={cn("finalBodyTitle", styles.finalBodyTitle)}>
+              Specifiche
+            </p>
+            <div className={cn("finalBodyCard", styles.finalBodyCard)}>
+              <div
+                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
+                style={{ marginBottom: "8rem" }}
+              >
+                <div
+                  className={cn(
+                    "finalBodyCardInfoElem",
+                    styles.finalBodyCardInfoElem
+                  )}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="300"
+                    height="300"
+                    fill="#1e6f5c"
+                    class="bi bi-universal-access"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M9.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM6 5.5l-4.535-.442A.531.531 0 0 1 1.531 4H14.47a.531.531 0 0 1 .066 1.058L10 5.5V9l.452 6.42a.535.535 0 0 1-1.053.174L8.243 9.97c-.064-.252-.422-.252-.486 0l-1.156 5.624a.535.535 0 0 1-1.053-.174L6 9V5.5Z" />
+                  </svg>
+                  <div style={{ width: "60%", marginLeft: "auto" }}>
+                    <p
+                      className={cn(
+                        "finalBodyCardInfoElemTitle",
+                        styles.finalBodyCardInfoElemTitle
+                      )}
+                    >
+                      Stile di vita
+                    </p>
+                    <p
+                      className={cn(
+                        "finalBodyCardInfoElemSubtitle",
+                        styles.finalBodyCardInfoElemSubtitle
+                      )}
+                    >
+                      {stilevita} Atleta - Ti alleni 5/6 volte a settimana,
+                      cammini molto e/o fai un lavoro pesante. Oppure fai più di
+                      16.000 passi al giorno.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
+                style={{ marginBottom: "8rem" }}
+              >
+                <div
+                  className={cn(
+                    "finalBodyCardInfoElem",
+                    styles.finalBodyCardInfoElem
+                  )}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100"
+                    height="100"
+                    fill="#1e6f5c"
+                    class="bi bi-rulers"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z" />
+                  </svg>
+                  <div style={{ width: "60%" }}>
+                    <p
+                      className={cn(
+                        "finalBodyCardInfoElemTitle",
+                        styles.finalBodyCardInfoElemTitle
+                      )}
+                    >
+                      Altezza
+                    </p>
+                    <p
+                      className={cn(
+                        "finalBodyCardInfoElemSubtitle",
+                        styles.finalBodyCardInfoElemSubtitle
+                      )}
+                    >
+                      {altezza} cm
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className={cn(
+                    "finalBodyCardInfoElem",
+                    styles.finalBodyCardInfoElem
+                  )}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100"
+                    height="100"
+                    fill="#1e6f5c"
+                    class="bi bi-clipboard2-pulse"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z" />
+                    <path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z" />
+                    <path d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128L9.979 5.356Z" />
+                  </svg>
+                  <div style={{ width: "60%" }}>
+                    <p
+                      className={cn(
+                        "finalBodyCardInfoElemTitle",
+                        styles.finalBodyCardInfoElemTitle
+                      )}
+                    >
+                      Peso
+                    </p>
+                    <p
+                      className={cn(
+                        "finalBodyCardInfoElemSubtitle",
+                        styles.finalBodyCardInfoElemSubtitle
+                      )}
+                    >
+                      {peso} kg
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
+              >
+                <div
+                  className={cn(
+                    "finalBodyCardInfoElem",
+                    styles.finalBodyCardInfoElem
+                  )}
+                >
+                  <div
+                    className={cn(
+                      "finalBodyCardTable",
+                      styles.finalBodyCardTable
+                    )}
+                  >
+                    <p
+                      className={cn(
+                        "finalBodyCardTableTitle",
+                        styles.finalBodyCardTableTitle
+                      )}
+                    >
+                      Composizione corporea
+                    </p>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        % massa grassa
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        14
+                      </p>
+                    </div>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        Acqua corporea
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        14
+                      </p>
+                    </div>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        Età metabolica
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        12
+                      </p>
+                    </div>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        % Grasso standard
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        45
+                      </p>
+                    </div>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        Massa grassa (BFM)
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        874
+                      </p>
+                    </div>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        Livello grasso viscerale
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        44
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card.Body>
+
+          <Card.Body className={cn("finalBody", styles.finalBody)}>
+            <p className={cn("finalBodyTitle2", styles.finalBodyTitle2)}>
+              Il tuo andamento è
+            </p>
+            <div className={cn("finalBodyCard", styles.finalBodyCard)}>
+              <div
+                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
+                style={{ marginBottom: "8rem" }}
+              >
+                <div
+                  className={cn(
+                    "finalBodyCardInfoElem",
+                    styles.finalBodyCardInfoElem
+                  )}
+                >
+                  <Image
+                    srcDark="/goodFace.png"
+                    alt="Teleios"
+                    style={{ width: "100px" }}
+                  />
+                </div>
+              </div>
+            </div>
+          </Card.Body>
+        </Card>
+      </ScrollParallax>
     </>
   );
 };

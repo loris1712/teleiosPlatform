@@ -51,7 +51,7 @@ const Step13 = ({ prevStep, nextStep, handleFormData, values }) => {
               </svg>
             </div>
             <div className={cn("title", styles.title)}>
-              <div className={cn("number", styles.number)}>{step + 12}</div>
+              <div className={cn("number", styles.number)}>{step + 9}</div>
               L' intestino è <strong>&nbsp; regolare?</strong>
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
