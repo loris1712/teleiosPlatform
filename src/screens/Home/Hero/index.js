@@ -22,13 +22,10 @@ const Hero = ({ scrollToRef }) => {
             con i migliori professionisti del settore.
           </div>
           <div className={styles.btns}>
-            <Link className={cn("button", styles.button)} to="/program">
+            <Link className={cn("button", styles.button)} to="/program2">
               Scheda Palestra
             </Link>
-            <Link
-              className={cn("button-stroke", styles.button)}
-              to="/class02-details"
-            >
+            <Link className={cn("button-stroke", styles.button)} to="/program">
               Scheda nutrizione
             </Link>
           </div>

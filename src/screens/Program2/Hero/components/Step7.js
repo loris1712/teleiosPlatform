@@ -1,10 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
 import validator from "validator";
 import styles from "../Form.module.sass";
 import cn from "classnames";
 import ScrollParallax from "../../../../components/ScrollParallax";
 import Dropdown from "../../../../components/Dropdown";
+
+const levelOptions = [
+  "10-12%",
+  "15-17%",
+  "20-22%",
+  "25%",
+  "30%",
+  "35%",
+  "40%",
+  "45%",
+  "50%",
+];
 
 // creating functional component ans getting props from app.js and destucturing them
 const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
@@ -24,32 +36,8 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
     nextStep();
   };
 
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [imageUrl, setImageUrl] = useState(null);
+  const [level, setLevel] = useState(levelOptions[0]);
 
-  const [selectedImage2, setSelectedImage2] = useState(null);
-  const [imageUrl2, setImageUrl2] = useState(null);
-
-  const [selectedImage3, setSelectedImage3] = useState(null);
-  const [imageUrl3, setImageUrl3] = useState(null);
-
-  useEffect(() => {
-    if (selectedImage) {
-      setImageUrl(URL.createObjectURL(selectedImage));
-      handleFormData("fotoLaterale");
-    }
-    if (selectedImage2) {
-      setImageUrl2(URL.createObjectURL(selectedImage2));
-      handleFormData(imageUrl2);
-    }
-    if (selectedImage3) {
-      setImageUrl3(URL.createObjectURL(selectedImage3));
-      handleFormData(imageUrl3);
-    }
-  }, [selectedImage, selectedImage2, selectedImage3]);
-  values.fotoLaterale = imageUrl;
-  values.fotoFrontale = imageUrl2;
-  values.fotoDietro = imageUrl3;
   return (
     <div>
       <ScrollParallax className={cn("wrap", styles.wrap)}>
@@ -75,78 +63,32 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 3}</div>
-              Carica una foto frontale, laterale e da dietro per aiutarci a
-              capire meglio il punto di partenza
+              Da quanto tempo ti alleni o non ti alleni?
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
               <div className={cn("form", styles.fileDiv)}>
-                <Form.Group
-                  controlId="formFile"
-                  className={cn("formGroupImage", styles.formGroupImage)}
-                >
+                <Form.Group controlId="formFile" className="mb-3">
                   <p className={cn("title", styles.textLabel)}>Frontale</p>
                   <Form.Control
                     className={cn("title", styles.formFile)}
                     type="file"
-                    label="Carica"
-                    id="formFile"
-                    onChange={(e) => setSelectedImage(e.target.files[0])}
                   />
-                  {imageUrl && selectedImage && (
-                    <div mt={2} textAlign="center">
-                      <div
-                        className={cn("imageDiv", styles.imageDiv)}
-                        style={{ backgroundImage: "url(" + imageUrl + ")" }}
-                        width="100%"
-                      ></div>
-                    </div>
-                  )}
                 </Form.Group>
 
-                <Form.Group
-                  controlId="formFile"
-                  className={cn("formGroupImage", styles.formGroupImage)}
-                >
+                <Form.Group controlId="formFile" className="mb-3">
                   <p className={cn("title", styles.textLabel)}>Laterale</p>
                   <Form.Control
                     className={cn("title", styles.formFile)}
                     type="file"
-                    label="Carica"
-                    id="formFile"
-                    onChange={(e) => setSelectedImage2(e.target.files[0])}
                   />
-                  {imageUrl2 && selectedImage2 && (
-                    <div mt={2} textAlign="center">
-                      <div
-                        className={cn("imageDiv", styles.imageDiv)}
-                        style={{ backgroundImage: "url(" + imageUrl2 + ")" }}
-                        width="100%"
-                      ></div>
-                    </div>
-                  )}
                 </Form.Group>
 
-                <Form.Group
-                  controlId="formFile"
-                  className={cn("formGroupImage", styles.formGroupImage)}
-                >
+                <Form.Group controlId="formFile" className="mb-3">
                   <p className={cn("title", styles.textLabel)}>Dietro</p>
                   <Form.Control
                     className={cn("title", styles.formFile)}
                     type="file"
-                    label="Carica"
-                    id="formFile"
-                    onChange={(e) => setSelectedImage3(e.target.files[0])}
                   />
-                  {imageUrl3 && selectedImage3 && (
-                    <div mt={2} textAlign="center">
-                      <div
-                        className={cn("imageDiv", styles.imageDiv)}
-                        style={{ backgroundImage: "url(" + imageUrl3 + ")" }}
-                        width="100%"
-                      ></div>
-                    </div>
-                  )}
                 </Form.Group>
               </div>
 

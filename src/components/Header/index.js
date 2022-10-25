@@ -208,7 +208,7 @@ const Headers = () => {
             </div>
             <Link
               className={cn("button-stroke button-small", styles.button)}
-              to="/"
+              to="/program2"
             >
               Crea la tua scheda
             </Link>
@@ -216,7 +216,7 @@ const Headers = () => {
         </div>
         <Link
           className={cn("button-stroke button-small", styles.button)}
-          to="/"
+          to="/program2"
         >
           Crea la tua scheda
         </Link>

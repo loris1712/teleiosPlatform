@@ -12,9 +12,6 @@ const Final = ({ values }) => {
     età,
     email,
     altezza,
-    fotoLaterale,
-    fotoFrontale,
-    fotoDietro,
     allergie,
     allergie_altro,
     farmaci,
@@ -50,7 +47,6 @@ const Final = ({ values }) => {
               Mangia meglio. Allenati più forte.
             </div>
           </div>
-
           <Card.Body className={cn("finalBody", styles.finalBody)}>
             <p className={cn("finalBodyTitle", styles.finalBodyTitle)}>
               Dati cliente
@@ -124,63 +120,6 @@ const Final = ({ values }) => {
                   >
                     Email
                   </div>
-                </div>
-              </div>
-            </div>
-          </Card.Body>
-
-          <Card.Body className={cn("finalBody", styles.finalBody)}>
-            <p className={cn("finalBodyTitle", styles.finalBodyTitle)}>
-              Fotografie
-            </p>
-            <div className={cn("finalBodyCard", styles.finalBodyCard)}>
-              <div
-                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
-              >
-                <div>
-                  <p
-                    className={cn(
-                      "finalBodyCardInfoElemTitle2",
-                      styles.finalBodyCardInfoElemTitle2
-                    )}
-                  >
-                    Foto Laterale
-                  </p>
-                  <div
-                    className={cn("imageDiv", styles.imageDiv)}
-                    style={{ backgroundImage: "url(" + fotoLaterale + ")" }}
-                    width="100%"
-                  ></div>
-                </div>
-                <div>
-                  <p
-                    className={cn(
-                      "finalBodyCardInfoElemTitle2",
-                      styles.finalBodyCardInfoElemTitle2
-                    )}
-                  >
-                    Foto Frontale
-                  </p>
-                  <div
-                    className={cn("imageDiv", styles.imageDiv)}
-                    style={{ backgroundImage: "url(" + fotoFrontale + ")" }}
-                    width="100%"
-                  ></div>
-                </div>
-                <div>
-                  <p
-                    className={cn(
-                      "finalBodyCardInfoElemTitle2",
-                      styles.finalBodyCardInfoElemTitle2
-                    )}
-                  >
-                    Foto Dietro
-                  </p>
-                  <div
-                    className={cn("imageDiv", styles.imageDiv)}
-                    style={{ backgroundImage: "url(" + fotoDietro + ")" }}
-                    width="100%"
-                  ></div>
                 </div>
               </div>
             </div>

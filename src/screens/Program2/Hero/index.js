@@ -38,9 +38,6 @@ const Hero = ({ scrollToRef }) => {
     email: "",
     peso: "",
     altezza: "",
-    fotoLaterale: "",
-    fotoFrontale: "",
-    fotoDietro: "",
     stileVita: "",
     sport: "",
     obiettivo: "",
@@ -90,7 +87,7 @@ const Hero = ({ scrollToRef }) => {
             <ScrollParallax className={styles.wrap}>
               <div className={cn("stage", styles.stage)}>Creazione</div>
               <h1 className={cn("h1", styles.title)}>
-                Crea il tuo programma nutrizione
+                Crea il tuo programma palestra
               </h1>
               <div className={styles.text}>
                 Crea la tua scheda nutrizione e la scheda palestra su misura per
@@ -102,9 +99,9 @@ const Hero = ({ scrollToRef }) => {
                 </div>
                 <Link
                   className={cn("button-stroke", styles.button)}
-                  to="/program2"
+                  to="/program"
                 >
-                  Scheda Palestra
+                  Scheda Nutrizione
                 </Link>
               </div>
             </ScrollParallax>
