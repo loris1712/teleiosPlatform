@@ -15,9 +15,16 @@ const Step10 = ({ prevStep, nextStep, handleFormData, values }) => {
     prevStep();
   };
 
+  const handlInputData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    values.obiettivo = e.target.name;
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+    console.log(values);
 
     // checking if value of first name and last name is empty show error else take to step 2
     if (validator.isEmpty(values.obiettivo)) {
@@ -70,24 +77,24 @@ const Step10 = ({ prevStep, nextStep, handleFormData, values }) => {
                       id={`default-${type}`}
                       label={`Dimagrimento - Calcoleremo un deficit nutrizionale ideale per le tue caratteristiche.`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="obiettivo"
-                      onChange={handleFormData("obiettivo")}
+                      name="Dimagrimento - Calcoleremo un deficit nutrizionale ideale per le tue caratteristiche."
+                      onChange={handlInputData2("obiettivo")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Massa muscolare - Calcoleremo il surplus nutrizionale adatto alle tue esigenze.`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="obiettivo"
-                      onChange={handleFormData("obiettivo")}
+                      name="Massa muscolare - Calcoleremo il surplus nutrizionale adatto alle tue esigenze."
+                      onChange={handlInputData2("obiettivo")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Mantenimento ed energia - Ti supporteremo nell’avere sempre la giusta carica.`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="obiettivo"
-                      onChange={handleFormData("obiettivo")}
+                      name="Mantenimento ed energia - Ti supporteremo nell’avere sempre la giusta carica."
+                      onChange={handlInputData2("obiettivo")}
                     />
                   </div>
                 ))}

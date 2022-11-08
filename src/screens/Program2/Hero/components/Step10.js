@@ -15,6 +15,12 @@ const Step10 = ({ prevStep, nextStep, handleFormData, values }) => {
     prevStep();
   };
 
+  const handlInputData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    values.obiettivo = e.target.name;
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
@@ -52,8 +58,7 @@ const Step10 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 6}</div>
-              Che tipo di allenamento preferisci, più attrezzi, corpo libero, un
-              misto?
+              Quali sono i tuoi obiettivi?
             </div>
             <div className={cn("subtitle", styles.subtitle)}>
               Seleziona l'obiettivo
@@ -68,26 +73,26 @@ const Step10 = ({ prevStep, nextStep, handleFormData, values }) => {
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Dimagrimento - Calcoleremo un deficit nutrizionale ideale per le tue caratteristiche.`}
+                      label={`Dimagrire`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="obiettivo"
-                      onChange={handleFormData("obiettivo")}
+                      name="Dimagrire"
+                      onChange={handlInputData2("obiettivo")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Massa muscolare - Calcoleremo il surplus nutrizionale adatto alle tue esigenze.`}
+                      label={`Ricomposizione corporea (dimagrire ed aumentare la massa muscolare)`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="obiettivo"
-                      onChange={handleFormData("obiettivo")}
+                      name="Ricomposizione corporea (dimagrire ed aumentare la massa muscolare)"
+                      onChange={handlInputData2("obiettivo")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Mantenimento ed energia - Ti supporteremo nell’avere sempre la giusta carica.`}
+                      label={`Aumento massa muscolare`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="obiettivo"
-                      onChange={handleFormData("obiettivo")}
+                      name="Aumento massa muscolare"
+                      onChange={handlInputData2("obiettivo")}
                     />
                   </div>
                 ))}

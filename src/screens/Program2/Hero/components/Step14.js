@@ -15,12 +15,19 @@ const Step14 = ({ prevStep, nextStep, handleFormData, values }) => {
     prevStep();
   };
 
+  const handlInputData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    values.massimizzare = e.target.name;
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+    console.log(values);
 
     // checking if value of first name and last name is empty show error else take to step 2
-    if (validator.isEmpty(values.non_piace)) {
+    if (validator.isEmpty(values.massimizzare)) {
       setError(true);
     } else {
       nextStep();
@@ -52,7 +59,8 @@ const Step14 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 10}</div>
-              Cosa <strong>&nbsp; NON &nbsp;</strong>ti piace?
+              Quale parte del corpo vuoi massimizzare la tonicità, aumento della
+              massa muscolare?
             </div>
             <div className={cn("subtitle", styles.subtitle)}>
               Indicaci qui sotto quali alimenti vuoi escludere dalla tua
@@ -60,7 +68,7 @@ const Step14 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
               <Form.Group className="mb-3">
-                {["checkbox"].map((type) => (
+                {["radio"].map((type) => (
                   <div
                     key={`default-${type}`}
                     className={cn("type2", styles.type2)}
@@ -68,399 +76,45 @@ const Step14 = ({ prevStep, nextStep, handleFormData, values }) => {
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Albume`}
+                      label={`Petto`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
+                      name="Petto"
+                      onChange={handlInputData2("massimizzare")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Bietola`}
+                      label={`Dorso`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
+                      name="Dorso"
+                      onChange={handlInputData2("massimizzare")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Branzino`}
+                      label={`Spalle`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
+                      name="Spalle"
+                      onChange={handlInputData2("massimizzare")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Broccoli`}
+                      label={`Gambe`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
+                      name="Gambe"
+                      onChange={handlInputData2("massimizzare")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Bresaola`}
+                      label={`Braccia`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Bulgur`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Carciofi`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Carote`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Cavolfiore`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Cavoli di Bruxelles`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Ceci`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Fagioli`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Farro`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Funghi`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Fiocchi di latte`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Lenticchie`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Gamberi`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Manzo`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Marmellata`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Melanzane`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Merluzzo`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Orzo`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Pane`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Pasta`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Pasta integrale`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Patata`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Patata dolce`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Peperoni`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Pesce spada`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Petto di pollo (salume)`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Petto di tacchino (salume)`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Piselli`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Pollo`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Pomodoro`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Quinoa`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Riso basmati`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Riso integrale`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Riso Rosso`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Riso Venere`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Salmone`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Sedano`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Sbombro`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Spinaci`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Tacchino`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Tonno`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Uova`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Zucchine`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
-                    />
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label={`Yogurt Greco`}
-                      className={cn("typeCheck", styles.typeCheck)}
-                      name="non_piace"
-                      onChange={handleFormData("non_piace")}
+                      name="Braccia"
+                      onChange={handlInputData2("massimizzare")}
                     />
                   </div>
                 ))}
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Control
-                  name="non_piace_altro"
-                  defaultValue={values.non_piace_altro}
-                  type="text"
-                  placeholder="Altro"
-                  className={cn("input", styles.input)}
-                  onChange={handleFormData("non_piace_altro")}
-                />
               </Form.Group>
               <Button
                 variant="primary"

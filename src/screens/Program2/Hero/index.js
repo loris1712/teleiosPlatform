@@ -17,13 +17,11 @@ import Step11 from "./components/Step11";
 import Step12 from "./components/Step12";
 import Step13 from "./components/Step13";
 import Step14 from "./components/Step14";
-import Step15 from "./components/Step15";
-import Step15_2 from "./components/Step15_2";
-import Step16 from "./components/Step16";
 import Step17 from "./components/Step17";
 import Step18 from "./components/Step18";
 import Step19 from "./components/Step19";
 import Final from "./components/Final";
+import Payment from "./components/Payment";
 import Steps from "../Steps";
 
 const Hero = ({ scrollToRef }) => {
@@ -35,22 +33,20 @@ const Hero = ({ scrollToRef }) => {
     firstName: "",
     lastName: "",
     età: "",
+    sesso: "",
     email: "",
     peso: "",
     altezza: "",
+    fotoLaterale: "",
+    fotoFrontale: "",
+    fotoDietro: "",
     stileVita: "",
-    sport: "",
+    problemi: "",
     obiettivo: "",
-    allergie: "",
-    allergie_altro: "",
-    farmaci: "",
-    intestino: "",
-    intestino_altro: "",
-    non_piace: "",
-    non_piace_altro: "",
-    quanti_pasti: "",
-    pasti_fuori: "",
-    integratori: "",
+    tipoAllenamento: "",
+    tempoSala: "",
+    inSala: "",
+    massimizzare: "",
     acconsente: "",
     note: "",
     infosensibili: "",
@@ -62,9 +58,25 @@ const Hero = ({ scrollToRef }) => {
     setstep(step + 1);
   };
 
+  const nextStepDouble = () => {
+    setstep(step + 2);
+  };
+
   // function for going to previous step by decreasing step state by 1
   const prevStep = () => {
     setstep(step - 1);
+  };
+
+  const handlSelectData = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    console.log(e.target.name);
+
+    //updating for data state taking previous state and then adding new value to create new object
+    setFormData((prevState) => ({
+      ...prevState,
+      [input]: e.target.name,
+    }));
   };
 
   // handling form input data by taking onchange value and updating our previous form data state
@@ -159,6 +171,7 @@ const Hero = ({ scrollToRef }) => {
                   nextStep={nextStep}
                   prevStep={prevStep}
                   handleFormData={handleInputData}
+                  handlSelectData={handlSelectData}
                   values={formData}
                 />
               </Col>
@@ -291,6 +304,7 @@ const Hero = ({ scrollToRef }) => {
                   step={step}
                   nextStep={nextStep}
                   prevStep={prevStep}
+                  nextStepDouble={nextStepDouble}
                   handleFormData={handleInputData}
                   values={formData}
                 />
@@ -309,6 +323,7 @@ const Hero = ({ scrollToRef }) => {
                 <Step14
                   step={step}
                   nextStep={nextStep}
+                  nextStepDouble={nextStepDouble}
                   prevStep={prevStep}
                   handleFormData={handleInputData}
                   values={formData}
@@ -325,9 +340,10 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step15
+                <Step17
                   step={step}
                   nextStep={nextStep}
+                  nextStepDouble={nextStepDouble}
                   prevStep={prevStep}
                   handleFormData={handleInputData}
                   values={formData}
@@ -344,9 +360,10 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step15_2
+                <Step18
                   step={step}
                   nextStep={nextStep}
+                  nextStepDouble={nextStepDouble}
                   prevStep={prevStep}
                   handleFormData={handleInputData}
                   values={formData}
@@ -363,9 +380,10 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step16
+                <Step19
                   step={step}
                   nextStep={nextStep}
+                  nextStepDouble={nextStepDouble}
                   prevStep={prevStep}
                   handleFormData={handleInputData}
                   values={formData}
@@ -382,9 +400,10 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step17
+                <Final
                   step={step}
                   nextStep={nextStep}
+                  nextStepDouble={nextStepDouble}
                   prevStep={prevStep}
                   handleFormData={handleInputData}
                   values={formData}
@@ -401,9 +420,10 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step18
+                <Payment
                   step={step}
                   nextStep={nextStep}
+                  nextStepDouble={nextStepDouble}
                   prevStep={prevStep}
                   handleFormData={handleInputData}
                   values={formData}
@@ -414,37 +434,6 @@ const Hero = ({ scrollToRef }) => {
         </div>
       );
 
-    case 18:
-      return (
-        <div className="App">
-          <Container>
-            <Row>
-              <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Step19
-                  step={step}
-                  nextStep={nextStep}
-                  prevStep={prevStep}
-                  handleFormData={handleInputData}
-                  values={formData}
-                />
-              </Col>
-            </Row>
-          </Container>
-        </div>
-      );
-
-    case 19:
-      return (
-        <div className="App">
-          <Container>
-            <Row>
-              <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Final values={formData} />
-              </Col>
-            </Row>
-          </Container>
-        </div>
-      );
     // default case to show nothing
     default:
       return <div className="App"></div>;

@@ -15,12 +15,18 @@ const Step12 = ({ prevStep, nextStep, handleFormData, values }) => {
     prevStep();
   };
 
+  const handlInputData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    values.tempoSala = e.target.name;
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
 
     // checking if value of first name and last name is empty show error else take to step 2
-    if (validator.isEmpty(values.farmaci)) {
+    if (validator.isEmpty(values.tempoSala)) {
       nextStep();
     } else {
       nextStep();
@@ -52,19 +58,57 @@ const Step12 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 8}</div>
-              Quanto tempo riesci a rimanere in sala per allenarti, 1 ora / 1
-              ora e mezza, di meno?
+              Quanti allenamenti riesci a fare sicuramente in sala a settimana?
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
               <Form.Group className="mb-3">
-                <Form.Control
-                  name="farmaci"
-                  defaultValue={values.farmaci}
-                  type="text"
-                  placeholder="Risposta"
-                  className={cn("input", styles.input)}
-                  onChange={handleFormData("farmaci")}
-                />
+                {["radio"].map((type) => (
+                  <div
+                    key={`default-${type}`}
+                    className={cn("type2", styles.type2)}
+                  >
+                    <Form.Check
+                      type={type}
+                      id={`default-${type}`}
+                      label={`1 giorno`}
+                      className={cn("typeCheck", styles.typeCheck)}
+                      name="1 giorno"
+                      onChange={handlInputData2("tempoSala")}
+                    />
+                    <Form.Check
+                      type={type}
+                      id={`default-${type}`}
+                      label={`2 giorni`}
+                      className={cn("typeCheck", styles.typeCheck)}
+                      name="2 giorni"
+                      onChange={handlInputData2("tempoSala")}
+                    />
+                    <Form.Check
+                      type={type}
+                      id={`default-${type}`}
+                      label={`3 giorni`}
+                      className={cn("typeCheck", styles.typeCheck)}
+                      name="3 giorni"
+                      onChange={handlInputData2("tempoSala")}
+                    />
+                    <Form.Check
+                      type={type}
+                      id={`default-${type}`}
+                      label={`4 giorni`}
+                      className={cn("typeCheck", styles.typeCheck)}
+                      name="4 giorni"
+                      onChange={handlInputData2("tempoSala")}
+                    />
+                    <Form.Check
+                      type={type}
+                      id={`default-${type}`}
+                      label={`5 giorni`}
+                      className={cn("typeCheck", styles.typeCheck)}
+                      name="5 giorni"
+                      onChange={handlInputData2("tempoSala")}
+                    />
+                  </div>
+                ))}
               </Form.Group>
               <Button
                 variant="primary"

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import styles from "../Form.module.sass";
 import cn from "classnames";
 import Image from "../Image";
 import ScrollParallax from "../../../../components/ScrollParallax";
 
-const Final = ({ values }) => {
+const Final = ({ prevStep, nextStep, handleFormData, values }) => {
   //destructuring the object from values
   const {
     firstName,
@@ -30,10 +30,20 @@ const Final = ({ values }) => {
     infosensibili,
     liberatoriaMedica,
     peso,
-    stilevita,
+    stileVita,
     sport,
     obiettivo,
   } = values;
+  const [error, setError] = useState(false);
+  const [step, setstep] = useState(1);
+
+  const prevStep2 = () => {
+    prevStep();
+  };
+
+  const nextStep3 = () => {
+    nextStep();
+  };
   return (
     <>
       <ScrollParallax className={cn("wrap", styles.wrap)}>
@@ -48,6 +58,16 @@ const Final = ({ values }) => {
             </div>
             <div className={cn("finalHeadText", styles.finalHeadText)}>
               Mangia meglio. Allenati più forte.
+            </div>
+          </div>
+
+          <div style={{ width: "100%" }}>
+            <div
+              className={cn("finalButton", styles.finalButton)}
+              style={{ marginLeft: "auto" }}
+              onClick={nextStep3}
+            >
+              Vai al pagamento
             </div>
           </div>
 
@@ -123,6 +143,82 @@ const Final = ({ values }) => {
                     )}
                   >
                     Email
+                  </div>
+                </div>
+              </div>
+              <div
+                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
+              >
+                <div
+                  className={cn(
+                    "finalBodyCardInfoElem",
+                    styles.finalBodyCardInfoElem
+                  )}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100"
+                    height="100"
+                    fill="#1e6f5c"
+                    class="bi bi-rulers"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z" />
+                  </svg>
+                  <div style={{ width: "60%" }}>
+                    <p
+                      className={cn(
+                        "finalBodyCardInfoElemTitle",
+                        styles.finalBodyCardInfoElemTitle
+                      )}
+                    >
+                      Altezza
+                    </p>
+                    <p
+                      className={cn(
+                        "finalBodyCardInfoElemSubtitle",
+                        styles.finalBodyCardInfoElemSubtitle
+                      )}
+                    >
+                      {altezza} cm
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className={cn(
+                    "finalBodyCardInfoElem",
+                    styles.finalBodyCardInfoElem
+                  )}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100"
+                    height="100"
+                    fill="#1e6f5c"
+                    class="bi bi-clipboard2-pulse"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z" />
+                    <path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z" />
+                    <path d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128L9.979 5.356Z" />
+                  </svg>
+                  <div style={{ width: "60%" }}>
+                    <p
+                      className={cn(
+                        "finalBodyCardInfoElemTitle",
+                        styles.finalBodyCardInfoElemTitle
+                      )}
+                    >
+                      Peso
+                    </p>
+                    <p
+                      className={cn(
+                        "finalBodyCardInfoElemSubtitle",
+                        styles.finalBodyCardInfoElemSubtitle
+                      )}
+                    >
+                      {peso} kg
+                    </p>
                   </div>
                 </div>
               </div>
@@ -226,86 +322,7 @@ const Final = ({ values }) => {
                         styles.finalBodyCardInfoElemSubtitle
                       )}
                     >
-                      {stilevita} Atleta - Ti alleni 5/6 volte a settimana,
-                      cammini molto e/o fai un lavoro pesante. Oppure fai più di
-                      16.000 passi al giorno.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
-                style={{ marginBottom: "8rem" }}
-              >
-                <div
-                  className={cn(
-                    "finalBodyCardInfoElem",
-                    styles.finalBodyCardInfoElem
-                  )}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="100"
-                    height="100"
-                    fill="#1e6f5c"
-                    class="bi bi-rulers"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z" />
-                  </svg>
-                  <div style={{ width: "60%" }}>
-                    <p
-                      className={cn(
-                        "finalBodyCardInfoElemTitle",
-                        styles.finalBodyCardInfoElemTitle
-                      )}
-                    >
-                      Altezza
-                    </p>
-                    <p
-                      className={cn(
-                        "finalBodyCardInfoElemSubtitle",
-                        styles.finalBodyCardInfoElemSubtitle
-                      )}
-                    >
-                      {altezza} cm
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className={cn(
-                    "finalBodyCardInfoElem",
-                    styles.finalBodyCardInfoElem
-                  )}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="100"
-                    height="100"
-                    fill="#1e6f5c"
-                    class="bi bi-clipboard2-pulse"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z" />
-                    <path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z" />
-                    <path d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128L9.979 5.356Z" />
-                  </svg>
-                  <div style={{ width: "60%" }}>
-                    <p
-                      className={cn(
-                        "finalBodyCardInfoElemTitle",
-                        styles.finalBodyCardInfoElemTitle
-                      )}
-                    >
-                      Peso
-                    </p>
-                    <p
-                      className={cn(
-                        "finalBodyCardInfoElemSubtitle",
-                        styles.finalBodyCardInfoElemSubtitle
-                      )}
-                    >
-                      {peso} kg
+                      {stileVita}
                     </p>
                   </div>
                 </div>
@@ -332,7 +349,7 @@ const Final = ({ values }) => {
                         styles.finalBodyCardTableTitle
                       )}
                     >
-                      Composizione corporea
+                      Riassunto risposte
                     </p>
                     <div
                       className={cn(
@@ -346,7 +363,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineTitle
                         )}
                       >
-                        % massa grassa
+                        Intestino
                       </p>
                       <p
                         className={cn(
@@ -354,7 +371,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineSubtitle
                         )}
                       >
-                        14
+                        {intestino}
                       </p>
                     </div>
                     <div
@@ -369,7 +386,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineTitle
                         )}
                       >
-                        Acqua corporea
+                        Integratori
                       </p>
                       <p
                         className={cn(
@@ -377,7 +394,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineSubtitle
                         )}
                       >
-                        14
+                        {integratori}
                       </p>
                     </div>
                     <div
@@ -392,7 +409,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineTitle
                         )}
                       >
-                        Età metabolica
+                        Sport
                       </p>
                       <p
                         className={cn(
@@ -400,7 +417,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineSubtitle
                         )}
                       >
-                        12
+                        {sport}
                       </p>
                     </div>
                     <div
@@ -415,7 +432,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineTitle
                         )}
                       >
-                        % Grasso standard
+                        Obiettivo
                       </p>
                       <p
                         className={cn(
@@ -423,7 +440,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineSubtitle
                         )}
                       >
-                        45
+                        {obiettivo}
                       </p>
                     </div>
                     <div
@@ -438,7 +455,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineTitle
                         )}
                       >
-                        Massa grassa (BFM)
+                        Pasti fuori
                       </p>
                       <p
                         className={cn(
@@ -446,7 +463,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineSubtitle
                         )}
                       >
-                        874
+                        {pasti_fuori}
                       </p>
                     </div>
                     <div
@@ -461,7 +478,7 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineTitle
                         )}
                       >
-                        Livello grasso viscerale
+                        Quanti pasti
                       </p>
                       <p
                         className={cn(
@@ -469,7 +486,122 @@ const Final = ({ values }) => {
                           styles.finalBodyCardTablelineSubtitle
                         )}
                       >
-                        44
+                        {quanti_pasti}
+                      </p>
+                    </div>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        Allergie/intolleranze
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        {allergie}
+                      </p>
+                    </div>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        Non mi piace
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        {non_piace}
+                      </p>
+                    </div>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        Integratori
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        {integratori}
+                      </p>
+                    </div>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        Pasti fuori
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        {pasti_fuori}
+                      </p>
+                    </div>
+                    <div
+                      className={cn(
+                        "finalBodyCardTableline",
+                        styles.finalBodyCardTableline
+                      )}
+                    >
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineTitle",
+                          styles.finalBodyCardTablelineTitle
+                        )}
+                      >
+                        Farmaci
+                      </p>
+                      <p
+                        className={cn(
+                          "finalBodyCardTablelineSubtitle",
+                          styles.finalBodyCardTablelineSubtitle
+                        )}
+                      >
+                        {farmaci}
                       </p>
                     </div>
                   </div>

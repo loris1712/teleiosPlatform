@@ -15,9 +15,23 @@ const Step11 = ({ prevStep, nextStep, handleFormData, values }) => {
     prevStep();
   };
 
+  let valSel = new Array();
+
+  const handlInputData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    var objSel = e.target.name;
+    valSel.push(objSel);
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+    const sumWithInitial = valSel.reduce(
+      (previousValue, currentValue) => `${previousValue}, ${currentValue}`
+    );
+    values.allergie = sumWithInitial;
+    console.log(values);
 
     // checking if value of first name and last name is empty show error else take to step 2
     if (validator.isEmpty(values.allergie)) {
@@ -70,80 +84,80 @@ const Step11 = ({ prevStep, nextStep, handleFormData, values }) => {
                       id={`default-${type}`}
                       label={`Non ho allergie/intolleranze`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="allergie"
-                      onChange={handleFormData("allergie")}
+                      name="Non ho allergie/intolleranze"
+                      onChange={handlInputData2("allergie")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Uova`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="allergie"
-                      onChange={handleFormData("allergie")}
+                      name="Uova"
+                      onChange={handlInputData2("allergie")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Latte`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="allergie"
-                      onChange={handleFormData("allergie")}
+                      name="Latte"
+                      onChange={handlInputData2("allergie")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Glutine`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="allergie"
-                      onChange={handleFormData("allergie")}
+                      name="Glutine"
+                      onChange={handlInputData2("allergie")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Anidride solforosa`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="allergie"
-                      onChange={handleFormData("allergie")}
+                      name="Anidride solforosa"
+                      onChange={handlInputData2("allergie")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Sedano`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="allergie"
-                      onChange={handleFormData("allergie")}
+                      name="Sedano"
+                      onChange={handlInputData2("allergie")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Pesce`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="allergie"
-                      onChange={handleFormData("allergie")}
+                      name="Pesce"
+                      onChange={handlInputData2("allergie")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Molluschi`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="allergie"
-                      onChange={handleFormData("allergie")}
+                      name="Molluschi"
+                      onChange={handlInputData2("allergie")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Frutta e guscio`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="allergie"
-                      onChange={handleFormData("allergie")}
+                      name="Frutta e guscio"
+                      onChange={handlInputData2("allergie")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Crostacei`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="allergie"
-                      onChange={handleFormData("allergie")}
+                      name="Crostacei"
+                      onChange={handlInputData2("allergie")}
                     />
                   </div>
                 ))}

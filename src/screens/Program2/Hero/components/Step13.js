@@ -6,24 +6,50 @@ import cn from "classnames";
 import ScrollParallax from "../../../../components/ScrollParallax";
 
 // creating functional component ans getting props from app.js and destucturing them
-const Step13 = ({ prevStep, nextStep, handleFormData, values }) => {
+const Step13 = ({
+  prevStep,
+  nextStep,
+  nextStepDouble,
+  handleFormData,
+  values,
+}) => {
   //creating error state for validation
   const [error, setError] = useState(false);
   const [step, setstep] = useState(1);
+
+  const nextStepDouble2 = () => {
+    nextStepDouble();
+  };
 
   const prevStep2 = () => {
     prevStep();
   };
 
+  const handlInputData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    values.inSala = e.target.name;
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+    console.log(values);
 
-    // checking if value of first name and last name is empty show error else take to step 2
-    if (validator.isEmpty(values.intestino)) {
+    if (validator.isEmpty(values.inSala)) {
       setError(true);
     } else {
-      nextStep();
+      if (
+        values.tempoSala == "3 giorni" ||
+        values.tempoSala == "4 giorni" ||
+        values.tempoSala == "5 giorni"
+      ) {
+        console.log(values.tempoSala);
+        nextStep();
+      } else {
+        console.log(values.tempoSala);
+        nextStepDouble2();
+      }
     }
   };
 
@@ -52,7 +78,7 @@ const Step13 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 9}</div>
-              L' intestino è <strong>&nbsp; regolare?</strong>
+              Quanto tempo riesci a rimanere in sala per allenarti?
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
               <Form.Group className="mb-3">
@@ -64,39 +90,29 @@ const Step13 = ({ prevStep, nextStep, handleFormData, values }) => {
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Si - 1 o più volte al giorno`}
+                      label={`45 min / 1 ora`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="intestino"
-                      onChange={handleFormData("intestino")}
+                      name="45 min / 1 ora"
+                      onChange={handlInputData2("inSala")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Pigro - 1 volta ogni 2 giorni`}
+                      label={`1 ora / 1 ora e mezza`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="intestino"
-                      onChange={handleFormData("intestino")}
+                      name="1 ora / 1 ora e mezza"
+                      onChange={handlInputData2("inSala")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
-                      label={`Molto pigro . 1 volta ogni 3 -7 giorni`}
+                      label={`1 ora e mezza / 2 ore`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="intestino"
-                      onChange={handleFormData("intestino")}
+                      name="1 ora e mezza / 2 ore"
+                      onChange={handlInputData2("inSala")}
                     />
                   </div>
                 ))}
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Control
-                  name="intestino_altro"
-                  defaultValue={values.intestino_altro}
-                  type="text"
-                  placeholder="Altro"
-                  className={cn("input", styles.input)}
-                  onChange={handleFormData("intestino_altro")}
-                />
               </Form.Group>
               <Button
                 variant="primary"

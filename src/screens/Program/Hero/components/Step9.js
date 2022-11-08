@@ -18,6 +18,7 @@ const Step9 = ({ prevStep, nextStep, handleFormData, values }) => {
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+    console.log(values);
 
     // checking if value of first name and last name is empty show error else take to step 2
     if (validator.isEmpty(values.sport)) {

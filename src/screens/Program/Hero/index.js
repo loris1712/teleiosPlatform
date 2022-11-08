@@ -24,6 +24,7 @@ import Step17 from "./components/Step17";
 import Step18 from "./components/Step18";
 import Step19 from "./components/Step19";
 import Final from "./components/Final";
+import Payment from "./components/Payment";
 import Steps from "../Steps";
 
 const Hero = ({ scrollToRef }) => {
@@ -442,12 +443,37 @@ const Hero = ({ scrollToRef }) => {
           <Container>
             <Row>
               <Col md={{ span: 6, offset: 3 }} className="custom-margin">
-                <Final values={formData} />
+                <Final
+                  step={step}
+                  nextStep={nextStep}
+                  prevStep={prevStep}
+                  handleFormData={handleInputData}
+                  values={formData}
+                />
               </Col>
             </Row>
           </Container>
         </div>
       );
+    case 20:
+      return (
+        <div className="App">
+          <Container>
+            <Row>
+              <Col md={{ span: 6, offset: 3 }} className="custom-margin">
+                <Payment
+                  step={step}
+                  nextStep={nextStep}
+                  prevStep={prevStep}
+                  handleFormData={handleInputData}
+                  values={formData}
+                />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      );
+
     // default case to show nothing
     default:
       return <div className="App"></div>;

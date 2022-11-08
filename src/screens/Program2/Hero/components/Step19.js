@@ -51,7 +51,7 @@ const Step19 = ({ prevStep, nextStep, handleFormData, values }) => {
               </svg>
             </div>
             <div className={cn("title", styles.title)}>
-              <div className={cn("number", styles.number)}>{step + 16}</div>
+              <div className={cn("number", styles.number)}>{step + 13}</div>
               Liberatoria medica
             </div>
             <div className={cn("subtitle", styles.subtitle)}>

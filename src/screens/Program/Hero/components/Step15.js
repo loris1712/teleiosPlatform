@@ -15,9 +15,23 @@ const Step15 = ({ prevStep, nextStep, handleFormData, values }) => {
     prevStep();
   };
 
+  let valSel = new Array();
+
+  const handlInputData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    var objSel = e.target.name;
+    valSel.push(objSel);
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+    const sumWithInitial = valSel.reduce(
+      (previousValue, currentValue) => `${previousValue}, ${currentValue}`
+    );
+    values.quanti_pasti = sumWithInitial;
+    console.log(values);
 
     // checking if value of first name and last name is empty show error else take to step 2
     if (validator.isEmpty(values.quanti_pasti)) {
@@ -52,7 +66,7 @@ const Step15 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 11}</div>
-              Quanti <strong>&nbsp;pasti&nbsp;</strong> vuole fare ?
+              Quanti <strong>&nbsp;pasti&nbsp;</strong> vuoi fare ?
             </div>
             <div className={cn("subtitle", styles.subtitle)}>
               Informazione: più pasti vuoi fare in dieta, minori saranno le
@@ -71,48 +85,48 @@ const Step15 = ({ prevStep, nextStep, handleFormData, values }) => {
                       id={`default-${type}`}
                       label={`Colazione`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="quanti_pasti"
-                      onChange={handleFormData("quanti_pasti")}
+                      name="Colazione"
+                      onChange={handlInputData2("quanti_pasti")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Spuntino mattutino`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="quanti_pasti"
-                      onChange={handleFormData("quanti_pasti")}
+                      name="Spuntino mattutino"
+                      onChange={handlInputData2("quanti_pasti")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Pranzo`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="quanti_pasti"
-                      onChange={handleFormData("quanti_pasti")}
+                      name="Pranzo"
+                      onChange={handlInputData2("quanti_pasti")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Spuntino pomeridiano`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="quanti_pasti"
-                      onChange={handleFormData("quanti_pasti")}
+                      name="Spuntino pomeridiano"
+                      onChange={handlInputData2("quanti_pasti")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Cena`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="quanti_pasti"
-                      onChange={handleFormData("quanti_pasti")}
+                      name="Cena"
+                      onChange={handlInputData2("quanti_pasti")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Spuntino serale`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="quanti_pasti"
-                      onChange={handleFormData("quanti_pasti")}
+                      name="Spuntino serale"
+                      onChange={handlInputData2("quanti_pasti")}
                     />
                   </div>
                 ))}

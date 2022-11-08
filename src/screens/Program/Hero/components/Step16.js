@@ -15,9 +15,16 @@ const Step16 = ({ prevStep, nextStep, handleFormData, values }) => {
     prevStep();
   };
 
+  const handlInputData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    values.integratori = e.target.name;
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+    console.log(values);
 
     // checking if value of first name and last name is empty show error else take to step 2
     if (validator.isEmpty(values.integratori)) {
@@ -66,16 +73,16 @@ const Step16 = ({ prevStep, nextStep, handleFormData, values }) => {
                       id={`default-${type}`}
                       label={`Non voglio utilizzarli`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="integratori"
-                      onChange={handleFormData("integratori")}
+                      name="Non voglio utilizzarli"
+                      onChange={handlInputData2("integratori")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Voglio utilizzarli`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="integratori"
-                      onChange={handleFormData("integratori")}
+                      name="Voglio utilizzarli"
+                      onChange={handlInputData2("integratori")}
                     />
                   </div>
                 ))}

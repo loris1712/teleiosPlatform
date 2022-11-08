@@ -20,7 +20,7 @@ const Step9 = ({ prevStep, nextStep, handleFormData, values }) => {
     e.preventDefault();
 
     // checking if value of first name and last name is empty show error else take to step 2
-    if (validator.isEmpty(values.sport)) {
+    if (validator.isEmpty(values.problemi)) {
       setError(true);
     } else {
       nextStep();
@@ -52,22 +52,21 @@ const Step9 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 5}</div>
-              Quali sono i tuoi obiettivi?
+              Hai o hai avuto problemi articolari o muscolari?
             </div>
             <div className={cn("subtitle", styles.subtitle)}>
-              Descrivi le attività svolte con frequenza ed orario (Es. Palestra
-              3 volte a settimana alle 18:00)
+              (es. Mal di schiena - cervicale - spalla...)
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
               <Form.Group className="mb-3">
                 <Form.Control
                   style={{ border: error ? "2px solid red" : "" }}
-                  name="sport"
-                  defaultValue={values.sport}
+                  name="problemi"
+                  defaultValue={values.problemi}
                   type="text"
-                  placeholder="Sport praticati"
+                  placeholder="Se si descrivili"
                   className={cn("input", styles.input)}
-                  onChange={handleFormData("sport")}
+                  onChange={handleFormData("problemi")}
                 />
                 {error ? (
                   <Form.Text

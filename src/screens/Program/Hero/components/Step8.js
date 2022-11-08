@@ -15,9 +15,16 @@ const Step8 = ({ prevStep, nextStep, handleFormData, values }) => {
     prevStep();
   };
 
+  const handlInputData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    values.stileVita = e.target.name;
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+    console.log(values);
 
     // checking if value of first name and last name is empty show error else take to step 2
     if (validator.isEmpty(values.stileVita)) {
@@ -55,7 +62,7 @@ const Step8 = ({ prevStep, nextStep, handleFormData, values }) => {
               Selezione il tuo <strong>&nbsp;stile di vita</strong>
             </div>
             <div className={cn("subtitle", styles.subtitle)}>
-              Ancora qualche info sul tuo stile di vita e ci siamo!
+              Ancora qualche informazione sul tuo stile di vita e ci siamo!
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
               <Form.Group className="mb-3">
@@ -69,40 +76,40 @@ const Step8 = ({ prevStep, nextStep, handleFormData, values }) => {
                       id={`default-${type}`}
                       label={`Sedentario - Non fai allenamento, cammini poco o lavori da seduto. Oppure fai fino a 4.000 passi al giorno.`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="stileVita"
-                      onChange={handleFormData("stileVita")}
+                      name="Sedentario - Non fai allenamento, cammini poco o lavori da seduto. Oppure fai fino a 4.000 passi al giorno."
+                      onChange={handlInputData2("stileVita")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Poco attivo - Ti alleni 2/3 volte a settimana, cammini poco o lavori da seduto. Oppure fai da 4.000 a 8.000 passi al giorno.`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="stileVita"
-                      onChange={handleFormData("stileVita")}
+                      name="Poco attivo - Ti alleni 2/3 volte a settimana, cammini poco o lavori da seduto. Oppure fai da 4.000 a 8.000 passi al giorno."
+                      onChange={handlInputData2("stileVita")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Attivo - Ti alleni 3/4 volte a settimana, cammini abbastanza o lavori in piedi. Oppure fai da 8.000 a 12.000 passi al giorno.`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="stileVita"
-                      onChange={handleFormData("stileVita")}
+                      name="Attivo - Ti alleni 3/4 volte a settimana, cammini abbastanza o lavori in piedi. Oppure fai da 8.000 a 12.000 passi al giorno."
+                      onChange={handlInputData2("stileVita")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Molto attivo - Ti alleni 4/5 volte a settimana, cammini molto e lavori in piedi. Oppure fai da 12.000 a 16.000 passi al giorno.`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="stileVita"
-                      onChange={handleFormData("stileVita")}
+                      name="Molto attivo - Ti alleni 4/5 volte a settimana, cammini molto e lavori in piedi. Oppure fai da 12.000 a 16.000 passi al giorno."
+                      onChange={handlInputData2("stileVita")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Atleta - Ti alleni 5/6 volte a settimana, cammini molto e/o fai un lavoro pesante. Oppure fai più di 16.000 passi al giorno.`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="stileVita"
-                      onChange={handleFormData("stileVita")}
+                      name="Atleta - Ti alleni 5/6 volte a settimana, cammini molto e/o fai un lavoro pesante. Oppure fai più di 16.000 passi al giorno."
+                      onChange={handlInputData2("stileVita")}
                     />
                   </div>
                 ))}

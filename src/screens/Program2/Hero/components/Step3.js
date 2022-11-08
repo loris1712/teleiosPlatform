@@ -6,7 +6,13 @@ import cn from "classnames";
 import ScrollParallax from "../../../../components/ScrollParallax";
 
 // creating functional component ans getting props from app.js and destucturing them
-const Step3 = ({ prevStep, nextStep, handleFormData, values }) => {
+const Step3 = ({
+  prevStep,
+  nextStep,
+  handleFormData,
+  handlSelectData,
+  values,
+}) => {
   //creating error state for validation
   const [error, setError] = useState(false);
   const [step, setstep] = useState(1);
@@ -15,9 +21,16 @@ const Step3 = ({ prevStep, nextStep, handleFormData, values }) => {
     prevStep();
   };
 
+  const handlSelectData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    values.sesso = e.target.name;
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+    console.log(values);
 
     // checking if value of first name and last name is empty show error else take to step 2
     if (validator.isEmpty(values.età) || validator.isEmpty(values.peso)) {
@@ -66,19 +79,19 @@ const Step3 = ({ prevStep, nextStep, handleFormData, values }) => {
                   >
                     <Form.Check
                       type={type}
-                      id={`default-${type}`}
+                      id="sesso"
                       label={`Maschio`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="sesso"
-                      onChange={handleFormData("sesso")}
+                      name="Maschio"
+                      onChange={handlSelectData2("sesso")}
                     />
                     <Form.Check
                       type={type}
-                      id={`default-${type}`}
+                      id="sesso"
                       label={`Femmina`}
-                      name="sesso"
+                      name="Femmina"
                       className={cn("typeCheck", styles.typeCheck)}
-                      onChange={handleFormData("sesso")}
+                      onChange={handlSelectData2("sesso")}
                     />
                   </div>
                 ))}

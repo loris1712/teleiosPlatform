@@ -15,6 +15,12 @@ const Step13 = ({ prevStep, nextStep, handleFormData, values }) => {
     prevStep();
   };
 
+  const handlInputData2 = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target.name;
+    values.intestino = e.target.name;
+  };
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
@@ -66,24 +72,24 @@ const Step13 = ({ prevStep, nextStep, handleFormData, values }) => {
                       id={`default-${type}`}
                       label={`Si - 1 o più volte al giorno`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="intestino"
-                      onChange={handleFormData("intestino")}
+                      name="Si - 1 o più volte al giorno"
+                      onChange={handlInputData2("intestino")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Pigro - 1 volta ogni 2 giorni`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="intestino"
-                      onChange={handleFormData("intestino")}
+                      name="Pigro - 1 volta ogni 2 giorni"
+                      onChange={handlInputData2("intestino")}
                     />
                     <Form.Check
                       type={type}
                       id={`default-${type}`}
                       label={`Molto pigro . 1 volta ogni 3 -7 giorni`}
                       className={cn("typeCheck", styles.typeCheck)}
-                      name="intestino"
-                      onChange={handleFormData("intestino")}
+                      name="Molto pigro . 1 volta ogni 3 -7 giorni"
+                      onChange={handlInputData2("intestino")}
                     />
                   </div>
                 ))}
