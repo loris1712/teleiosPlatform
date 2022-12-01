@@ -13,6 +13,7 @@ import Quality from "./Quality";
 import Advantages from "../../components/Advantages";
 import Workouts from "../../components/Workouts";
 import Offer from "../../components/Offer";
+import Faq from "./Faq";
 
 const Home = () => {
   const scrollToRef = useRef(null);
@@ -25,13 +26,12 @@ const Home = () => {
       <Intro />
       <Book />
       <ValueProps className="section" />
-      <About />
       <Team />
       <Review className="section" />
       <Quality />
       <Advantages />
       <Workouts />
-      <Offer className="section-border-top" />
+      <Faq />
     </>
   );
 };

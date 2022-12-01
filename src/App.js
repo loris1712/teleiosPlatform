@@ -13,6 +13,7 @@ import Lifestyle from "./screens/Lifestyle";
 import Article from "./screens/Article";
 import Program from "./screens/Program";
 import Program2 from "./screens/Program2";
+import Program3 from "./screens/Program3";
 
 function App() {
   return (
@@ -123,6 +124,15 @@ function App() {
           render={() => (
             <Page>
               <Program2 />
+            </Page>
+          )}
+        />
+        <Route
+          exact
+          path="/program3"
+          render={() => (
+            <Page>
+              <Program3 />
             </Page>
           )}
         />

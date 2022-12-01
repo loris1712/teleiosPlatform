@@ -83,6 +83,7 @@ const Payment = ({ prevStep, nextStep, handleFormData, values }) => {
               <p className={cn("finalBodyTitle", styles.finalBodyTitle)}>
                 Seleziona il tuo piano di pagamento
               </p>
+              <a href="https://buy.stripe.com/test_fZe8zhbz58d96li003">
               <div className={cn("packPayment", styles.packPayment)}>
                 <div>
                   <p
@@ -92,7 +93,7 @@ const Payment = ({ prevStep, nextStep, handleFormData, values }) => {
                       lineHeight: "16px",
                     }}
                   >
-                    Pacchetto 1
+                    Pacchetto Silver
                   </p>
                   <p
                     style={{
@@ -113,11 +114,14 @@ const Payment = ({ prevStep, nextStep, handleFormData, values }) => {
                     lineHeight: "56px",
                     letterSpacing: "-.02em",
                     fontWeight: "600",
+                    color: "#fff",
                   }}
                 >
-                  <p>€ 89</p>
+                  <p>€ 64</p>
                 </div>
               </div>
+              </a>
+              <a href="https://buy.stripe.com/test_00gdTB8mT1OL2526oq">
               <div className={cn("packPayment", styles.packPayment)}>
                 <div>
                   <p
@@ -127,7 +131,7 @@ const Payment = ({ prevStep, nextStep, handleFormData, values }) => {
                       lineHeight: "16px",
                     }}
                   >
-                    Pacchetto 2
+                    Pacchetto Gold
                   </p>
                   <p
                     style={{
@@ -148,11 +152,14 @@ const Payment = ({ prevStep, nextStep, handleFormData, values }) => {
                     lineHeight: "56px",
                     letterSpacing: "-.02em",
                     fontWeight: "600",
+                    color: "#fff",
                   }}
                 >
-                  <p>€ 239</p>
+                  <p>€ 164</p>
                 </div>
               </div>
+              </a>
+              <a href="https://buy.stripe.com/test_3csaHpbz5alheRO7st">
               <div className={cn("packPayment", styles.packPayment)}>
                 <div>
                   <p
@@ -162,7 +169,7 @@ const Payment = ({ prevStep, nextStep, handleFormData, values }) => {
                       lineHeight: "16px",
                     }}
                   >
-                    Pacchetto 3
+                    Pacchetto Platinum
                   </p>
                   <p
                     style={{
@@ -183,11 +190,13 @@ const Payment = ({ prevStep, nextStep, handleFormData, values }) => {
                     lineHeight: "56px",
                     letterSpacing: "-.02em",
                     fontWeight: "600",
+                    color: "#fff",
                   }}
                 >
-                  <p>€ 349</p>
+                  <p>€ 269</p>
                 </div>
               </div>
+              </a>
             </Card.Body>
           </div>
         </Card>

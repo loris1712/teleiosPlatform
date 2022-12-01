@@ -52,7 +52,7 @@ const StepTwo = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 1}</div>
-              Inserisci la tua <strong>&nbsp;email</strong>
+              Email
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
               <Form.Group className="mb-3">

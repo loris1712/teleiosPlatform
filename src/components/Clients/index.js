@@ -35,7 +35,7 @@ const Clients = () => {
     <div className={styles.clients}>
       <div className={cn("container", styles.container)}>
         <ScrollParallax className={styles.title}>
-          Qui inseriamo qualche partner
+          I nostri partners
         </ScrollParallax>
         <div className={styles.list}>
           {list.map((x, index) => (

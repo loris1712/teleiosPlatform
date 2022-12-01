@@ -1,0 +1,304 @@
+@import ../../../styles/helpers
+
+.card
+    padding-left: 10rem
+    padding-right: 10rem
+    margin-bottom: 5rem
+    +m
+        margin-top: 3rem
+        padding-left: 0rem
+        padding-right: 0rem
+        margin-bottom: 5rem
+
+.wrap
+    position: relative
+    z-index: 3
+    max-width: 100%
+    +t
+        max-width: 100%
+    +m
+        max-width: 100%
+        margin-bottom: 80px
+
+.returnBack
+    background: transparent
+    cursor: pointer
+    width: fit-content
+
+.form
+    margin-top: 3rem
+
+.title
+    font-size: 24px
+    line-height: 24px
+    font-weight: 200
+    margin-top: 1.5rem
+    align-items: center
+    display: flex
+    .number
+        font-size: 24px
+        line-height: 24px
+        margin-right: 1rem
+        font-weight: 600
+        color: darken($green, 10)
+
+.subtitle
+    font-size: 16px
+    line-height: 24px
+    font-weight: 400
+    margin-top: 1rem
+
+.input
+    width: 100%
+    height: 48px
+    padding: 0 48px 0 14px
+    border-radius: 24px
+    background: none
+    border: 2px solid $neutrals6
+    margin-bottom: 1rem
+    +poppins
+    +caption-1
+    color: $neutrals2
+    transition: border-color .2s
+    +dark
+        border-color: $neutrals3
+        color: $neutrals8
+    &:focus
+        border-color: $neutrals4
+    +placeholder
+        color: $neutrals4
+
+.type
+    display: flex
+    margin-bottom: 1rem
+    align-items: center
+    label
+        margin-left: 0.5rem
+        margin-bottom: 1rem
+
+input[type="checkbox"]:before
+    background: red
+
+.typeCheck
+    margin-right: 1rem
+    margin-bottom: 1rem
+    padding: 0.8rem
+    border-radius: 12px
+    cursor: pointer
+    box-shadow: inset 0 0 0 2px #353945
+    padding-left: 1rem
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: box-shadow .2s;
+    &:hover
+        box-shadow: inset 0 0 0 2px #777e90;
+
+.type2
+    margin-bottom: 1rem
+    label
+        margin-left: 0.5rem
+
+.preview
+    margin-top: 1rem
+
+.textLabel
+    font-size: 18px
+    line-height: 18px
+    font-weight: 600
+    margin-bottom: 0.8rem
+    width: fit-content
+    margin-left: auto
+    margin-right: auto
+
+.formFile
+    margin-right: 1rem
+    margin-bottom: 1rem
+    padding: 0.8rem
+    border-radius: 12px
+    cursor: pointer
+    box-shadow: inset 0 0 0 2px #353945
+    padding-left: 1rem
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: box-shadow .2s;
+    &:hover
+        box-shadow: inset 0 0 0 2px #777e90;
+
+.fileDiv
+    display: flex
+
+.final
+
+.finalHead
+    display: flex
+    align-items: center
+    margin-bottom: 6rem
+
+.finalHeadLogo
+    margin-right: 48px
+    width: fit-content
+    +d
+        margin-right: auto
+    img
+        width: 300px
+
+.finalHeadText
+    width: fit-content
+    margin-left: auto
+    text-transform: uppercase
+    font-weight: 600
+    color: #188d74
+
+.finalBody
+    margin-top: 2rem
+    padding: 1rem
+
+.finalBodyCard
+    margin-top: 2rem
+
+.finalBodyTitle
+    text-transform: uppercase
+    font-weight: 600
+    color: #fff
+
+.finalBodyTitle2
+    font-weight: 600
+    font-size: 28px
+    line-height: 28px
+    color: #188d75
+
+.finalBodyCardLine
+    display: flex
+    align-items: center
+    margin-bottom: 2.5rem
+
+.finalBodyCardInfo
+    width: 50%
+    margin-right: 4rem
+
+.finalBodyCardInfoTitle
+    padding-bottom: 0.2rem
+    border-bottom: 1px solid #188d74
+
+.finalBodyCardInfoSubtitle
+    font-size: 12px
+    line-height: 12px
+    letter-spacing: 0.1em
+    font-weight: 200
+    margin-top: 0.4rem
+
+.finalBodyCardInfoElem
+    display: flex
+    margin-right: 5rem
+    width: 100%
+    img
+        width: 100px
+
+.finalBodyCardInfoElemTitle
+    margin-left: 2rem
+    font-size: 28px
+    line-height: 28px
+    font-weight: 200
+    color:#1e6f5c
+
+.finalBodyCardInfoElemTitle2
+    font-size: 22px
+    line-height: 22px
+    font-weight: 200
+    color:#1e6f5c
+    margin-bottom: 1rem
+
+.finalBodyCardInfoElemSubtitle
+    margin-left: 2rem
+    margin-top: 0.5rem
+    font-size: 20px
+    line-height: 20px
+    font-weight: 600
+    color:#29bb89
+    
+.finalBodyCardTable
+    padding: 2rem
+    background: #1e6f5c
+    border-radius: 12px
+    width: 100%
+
+.finalBodyCardTableTitle
+    font-size: 18px
+    line-height: 18px
+    margin-bottom: 1.5rem
+
+.finalBodyCardTableline
+    display: flex
+    align-items: center
+    margin-top: 0.5rem
+    margin-bottom: 0.5rem
+    .finalBodyCardTablelineTitle
+        font-size: 14px
+        font-weight: 200
+        color: #d9d9d9
+    .finalBodyCardTablelineSubtitle
+        font-size: 14px
+        font-weight: 600
+        color: #fff
+        margin-left: auto
+
+.formGroupImage
+    margin-right: 1rem
+    margin-bottom: 1rem
+    padding: 0.8rem
+
+.imageDiv
+    width: 95%
+    height: 200px
+    border-radius: 12px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+.finalBodyCardLine
+    .imageDiv
+        width: 300px
+        height: 300px
+        margin-right: 5rem
+        border-radius: 12px
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+
+.formUploadFileLabel
+    height: 40px
+    border-radius: 20px
+    padding: 0 16px
+    font-size: 14px
+    box-shadow: 0 0 0 2px #777e90 inset
+    color: #FCFCFD
+    background: none
+    margin-top: 0.5rem
+    cursor: pointer
+    font-weight: 600
+    transition: all .2s
+    &:hover
+        box-shadow: 0 0 0 2px #fff inset
+
+.titlePayment
+    font-size: 75px
+    color: #fff
+    font-weight: 600
+    opacity: 0.1
+    position: absolute
+    top: 0
+
+.packPayment
+    display: flex
+    align-items: center
+    width: 100%
+    border-radius: 24px
+    background: #0f131d
+    padding: 1rem
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+    margin-bottom: 1rem
+    margin-top: 1rem
+    box-shadow: 0 0 0 2px #0f131d inset
+    transition: all .2s
+    &:hover
+        cursor: pointer
+        box-shadow: 0 0 0 2px #777e90 inset

@@ -53,7 +53,7 @@ const Step9 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 5}</div>
-              Inserisci <strong>&nbsp;sport praticati</strong>
+              Sport praticati?
             </div>
             <div className={cn("subtitle", styles.subtitle)}>
               Descrivi le attività svolte con frequenza ed orario (Es. Palestra

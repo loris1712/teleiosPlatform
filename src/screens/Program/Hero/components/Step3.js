@@ -54,8 +54,7 @@ const Step3 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 2}</div>
-              Inserisci il{" "}
-              <strong>&nbsp;Sesso, Anni, Peso (kg) e Altezza (cm)</strong>
+              Sesso, Anni, Peso e Altezza
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
               <Form.Group>

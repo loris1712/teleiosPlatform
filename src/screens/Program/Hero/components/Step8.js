@@ -59,7 +59,7 @@ const Step8 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 4}</div>
-              Selezione il tuo <strong>&nbsp;stile di vita</strong>
+              Stile di vita
             </div>
             <div className={cn("subtitle", styles.subtitle)}>
               Ancora qualche informazione sul tuo stile di vita e ci siamo!

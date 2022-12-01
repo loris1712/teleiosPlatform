@@ -75,8 +75,7 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
             </div>
             <div className={cn("title", styles.title)}>
               <div className={cn("number", styles.number)}>{step + 3}</div>
-              Carica una foto frontale, laterale e da dietro per aiutarci a
-              capire meglio il punto di partenza
+              Carica le foto
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
               <div className={cn("form", styles.fileDiv)}>

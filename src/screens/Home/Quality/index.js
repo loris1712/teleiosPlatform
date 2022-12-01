@@ -5,7 +5,7 @@ import ScrollParallax from "../../../components/ScrollParallax";
 
 const items = [
   {
-    title: "Happy Users",
+    title: "Inseriamo risultati raggiunti",
     counter: "1m",
     images: "/images/content/user-green.svg",
     alt: "user",

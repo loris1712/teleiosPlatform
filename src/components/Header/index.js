@@ -97,20 +97,20 @@ const navLinks = [
     url: "/",
   },
   {
-    title: "Prezzi",
-    url: "/pricing",
-  },
-  {
     title: "Chi siamo",
     url: "/features",
   },
   {
-    title: "Contattaci",
-    url: "/download",
+    title: "Prezzi",
+    url: "/pricing",
   },
   {
-    title: "Blog",
+    title: "Recensioni",
     url: "/class01",
+  },
+  {
+    title: "Contattaci",
+    url: "/download",
   },
 ];
 
@@ -216,9 +216,9 @@ const Headers = () => {
         </div>
         <Link
           className={cn("button-stroke button-small", styles.button)}
-          to="/program2"
+          to="/program3"
         >
-          Crea la tua scheda
+         Crea la scheda completa
         </Link>
         <button
           className={cn(styles.burger, { [styles.active]: visibleNav })}

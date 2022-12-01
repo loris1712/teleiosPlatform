@@ -13,16 +13,16 @@ const menu = [
     url: "/",
   },
   {
+    title: "Chi siamo",
+    url: "/features",
+  },
+  {
     title: "Prezzi",
     url: "/pricing",
   },
   {
-    title: "Blog",
+    title: "Recensioni",
     url: "/class01",
-  },
-  {
-    title: "Chi siamo",
-    url: "/features",
   },
   {
     title: "Contattaci",
@@ -102,7 +102,8 @@ const Footer = () => {
           <div className={styles.col}>
             <div className={styles.category}>contatti</div>
             <div className={styles.info}>
-              <p>Salerno, Italy</p>
+              <p>Via Tiberio Claudio Felice, 50, 84131 Salerno SA</p>
+              <p>Via Tiberio Claudio Felice, Milano, Italia</p>
               <p>+39 327 406 2756</p>
               <p>+39 330 602 145</p>
             </div>

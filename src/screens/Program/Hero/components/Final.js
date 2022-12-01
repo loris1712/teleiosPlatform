@@ -5,6 +5,11 @@ import cn from "classnames";
 import Image from "../Image";
 import ScrollParallax from "../../../../components/ScrollParallax";
 
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+
 const Final = ({ prevStep, nextStep, handleFormData, values }) => {
   //destructuring the object from values
   const {
@@ -37,12 +42,25 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
   const [error, setError] = useState(false);
   const [step, setstep] = useState(1);
 
+  const db = firebase.initializeApp({ apiKey: "AIzaSyDxSzPt14Y_njHuntVNiMHV5XT37Jh7Wxc",
+  authDomain: "teleios-gym.firebaseapp.com",
+  databaseURL: "https://teleios-gym-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "teleios-gym",
+  storageBucket: "teleios-gym.appspot.com",
+  messagingSenderId: "648488244162",
+  appId: "1:648488244162:web:1f237e68aca5fc261abc5b",
+  measurementId: "G-3GWJF2BEQE" }).firestore();
+
   const prevStep2 = () => {
     prevStep();
   };
 
   const nextStep3 = () => {
-    nextStep();
+    db.collection("utenti")
+    .add(values)
+    .then(() => {
+      nextStep();
+    });
   };
   return (
     <>

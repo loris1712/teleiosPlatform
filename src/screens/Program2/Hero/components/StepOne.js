@@ -51,8 +51,7 @@ const StepOne = ({ prevStep, nextStep, handleFormData, values }) => {
               </svg>
             </div>
             <div className={cn("title", styles.title)}>
-              <div className={cn("number", styles.number)}>{step}</div>Inserisci
-              il tuo <strong>&nbsp;nome completo</strong>
+              <div className={cn("number", styles.number)}>{step}</div>Nome completo
             </div>
             <Form className={cn("form", styles.form)} onSubmit={submitFormData}>
               <Form.Group className="mb-3">
