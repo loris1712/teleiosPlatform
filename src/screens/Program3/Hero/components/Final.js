@@ -8,9 +8,50 @@ import ScrollParallax from "../../../../components/ScrollParallax";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import firebase from 'firebase/compat/app';
+import storage from 'firebase/compat';
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import 'firebase/compat/firestore';
  
 const Final = ({ prevStep, nextStep, handleFormData, values }) => {
+
+  //destructuring the object from values
+  const {
+    firstName,
+    età,
+    sesso,
+    email,
+    peso,
+    altezza,
+    fotoLaterale,
+    fotoFrontale,
+    fotoDietro,
+    stileVita,
+    problemi,
+    obiettivo,
+    tipoAllenamento,
+    tempoSala,
+    inSala,
+    massimizzare,
+    stileVita_f,
+    sport,
+    obiettivo_f,
+    allergie,
+    allergie_altro,
+    farmaci,
+    intestino,
+    intestino_altro,
+    non_piace,
+    non_piace_altro,
+    quanti_pasti,
+    pasti_fuori,
+    integratori,
+    acconsente,
+    note,
+    infosensibili,
+    liberatoriaMedica,
+  } = values;
+  const [error, setError] = useState(false);
+  const [step, setstep] = useState(1);
 
   const db = firebase.initializeApp({ apiKey: "AIzaSyDxSzPt14Y_njHuntVNiMHV5XT37Jh7Wxc",
   authDomain: "teleios-gym.firebaseapp.com",
@@ -21,38 +62,68 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
   appId: "1:648488244162:web:1f237e68aca5fc261abc5b",
   measurementId: "G-3GWJF2BEQE" }).firestore();
 
-  //destructuring the object from values
-  const {
-    firstName,
-    età,
-    sesso,
-    email,
-    peso,
-    altezza,
-    stileVita,
-    problemi,
-    fotoLaterale,
-    fotoFrontale,
-    fotoDietro,
-    obiettivo,
-    tipoAllenamento,
-    tempoSala,
-    inSala,
-    massimizzare,
-    acconsente,
-    note,
-    infosensibil,
-    liberatoriaMedica,
-  } = values;
-  const [error, setError] = useState(false);
-  const [step, setstep] = useState(1);
-
   const prevStep2 = () => {
     prevStep();
   };
 
   const nextStep3 = () => {
-    db.collection("utenti")
+    if(values.fotoLaterale == null)
+      return;
+      
+      var today = new Date(),
+      date = today.getFullYear() + '_' + (today.getMonth() + 1) + '_' + today.getDate() + '_' + today.getHours() + '_' + today.getMinutes();
+
+      const storage = getStorage();
+      const storageRef = ref(storage, `/${values.firstName}_${date}/${values.fotoLaterale.name}`);
+      uploadBytes(storageRef, values.fotoLaterale)
+
+      const storageRef2 = ref(storage, `/${values.firstName}_${date}/${values.fotoFrontale.name}`);
+      uploadBytes(storageRef2, values.fotoFrontale)
+
+      const storageRef3 = ref(storage, `/${values.firstName}_${date}/${values.fotoDietro.name}`);
+      uploadBytes(storageRef3, values.fotoDietro)
+
+      let urlFotoLaterale = "/" + values.firstName + "_" + date + "/" + values.fotoLaterale.name;
+      let urlfotoFrontale = "/" + values.firstName + "_" + date + "/" + values.fotoFrontale.name;
+      let urlfotoDietro = "/" + values.firstName + "_" + date + "/" + values.fotoDietro.name;
+
+      const dataToSave = {
+        firstName: values.firstName,
+        età: values.età,
+        sesso: values.sesso,
+        email: values.email,
+        peso: values.peso,
+        altezza: values.altezza,
+        fotoLaterale: urlFotoLaterale,
+        fotoFrontale: urlfotoFrontale, 
+        fotoDietro: urlfotoDietro,
+        stileVita: values.stileVita,
+        tipoAllenamento: values.tipoAllenamento,
+        tempoSala: values.tempoSala,
+        inSala: values.inSala,
+        massimizzare: values.massimizzare,
+        stileVita_f: values.stileVita_f,
+        obiettivo_f: values.obiettivo_f,
+        allergie: values.allergie,
+        allergie_altro: values.allergie_altro,
+        farmaci: values.farmaci, 
+        intestino: values.intestino,
+        intestino_altro: values.intestino_altro,
+        non_piace: values.non_piace,
+        non_piace_altro: values.non_piace_altro,
+        quanti_pasti: values.quanti_pasti,
+        pasti_fuori: values.pasti_fuori,
+        integratori: values.integratori,
+        acconsente: values.acconsente,
+        note: values.note,
+        infosensibili: values.infosensibili,
+        liberatoriaMedica: values.liberatoriaMedica,
+        stileVita: values.stileVita,
+        sport: values.sport,
+        obiettivo: values.obiettivo,
+      }
+
+    db.collection("schede_miste")
     .add(values)
     .then(() => {
       nextStep();

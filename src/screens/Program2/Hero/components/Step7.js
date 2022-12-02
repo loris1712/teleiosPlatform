@@ -6,11 +6,22 @@ import cn from "classnames";
 import ScrollParallax from "../../../../components/ScrollParallax";
 import Dropdown from "../../../../components/Dropdown";
 
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import firebase from 'firebase/compat/app';
+import storage from 'firebase/compat';
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+import 'firebase/compat/firestore';
+
 // creating functional component ans getting props from app.js and destucturing them
 const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
   //creating error state for validation
   const [error, setError] = useState(false);
   const [step, setstep] = useState(1);
+
+  const [image, setImage] = useState('');
+  const [image2, setImage2] = useState('');
+  const [image3, setImage3] = useState('');
 
   const prevStep2 = () => {
     prevStep();
@@ -19,6 +30,10 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+
+    values.fotoLaterale = image;
+    values.fotoFrontale = image2;
+    values.fotoDietro = image3;
 
     // checking if value of first name and last name is empty show error else take to step 2
     nextStep();
@@ -32,6 +47,19 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
 
   const [selectedImage3, setSelectedImage3] = useState(null);
   const [imageUrl3, setImageUrl3] = useState(null);
+
+  const db = firebase.initializeApp({ apiKey: "AIzaSyDxSzPt14Y_njHuntVNiMHV5XT37Jh7Wxc",
+  authDomain: "teleios-gym.firebaseapp.com",
+  databaseURL: "https://teleios-gym-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "teleios-gym",
+  storageBucket: "teleios-gym.appspot.com",
+  messagingSenderId: "648488244162",
+  appId: "1:648488244162:web:1f237e68aca5fc261abc5b",
+  measurementId: "G-3GWJF2BEQE" }).firestore();
+
+  const upload = ()=>{
+    
+  }
 
   useEffect(() => {
     if (selectedImage) {
@@ -47,9 +75,11 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
       handleFormData(imageUrl3);
     }
   }, [selectedImage, selectedImage2, selectedImage3]);
+
   values.fotoLaterale = imageUrl;
   values.fotoFrontale = imageUrl2;
   values.fotoDietro = imageUrl3;
+
   return (
     <div>
       <ScrollParallax className={cn("wrap", styles.wrap)}>
@@ -89,7 +119,8 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
                     type="file"
                     label="Carica"
                     id="formFile"
-                    onChange={(e) => setSelectedImage(e.target.files[0])}
+                    onChange={(e)=>{setImage(e.target.files[0])}}
+                    accept="/image/*"
                   />
                   {imageUrl && selectedImage && (
                     <div mt={2} textAlign="center">
@@ -112,7 +143,7 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
                     type="file"
                     label="Carica"
                     id="formFile"
-                    onChange={(e) => setSelectedImage2(e.target.files[0])}
+                    onChange={(e)=>{setImage2(e.target.files[0])}}
                   />
                   {imageUrl2 && selectedImage2 && (
                     <div mt={2} textAlign="center">
@@ -135,7 +166,7 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
                     type="file"
                     label="Carica"
                     id="formFile"
-                    onChange={(e) => setSelectedImage3(e.target.files[0])}
+                    onChange={(e)=>{setImage3(e.target.files[0])}}
                   />
                   {imageUrl3 && selectedImage3 && (
                     <div mt={2} textAlign="center">
@@ -154,9 +185,7 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
                 type="submit"
                 style={{ marginTop: "1rem" }}
                 className={cn("button", styles.button)}
-                onClick={() => {
-                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-                }}
+                onClick={upload}
               >
                 Avanti
                 <svg

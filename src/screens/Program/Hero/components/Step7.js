@@ -12,6 +12,10 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
   const [error, setError] = useState(false);
   const [step, setstep] = useState(1);
 
+  const [image, setImage] = useState('');
+  const [image2, setImage2] = useState('');
+  const [image3, setImage3] = useState('');
+
   const prevStep2 = () => {
     prevStep();
   };
@@ -19,6 +23,10 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
+
+    values.fotoLaterale = image;
+    values.fotoFrontale = image2;
+    values.fotoDietro = image3;
 
     // checking if value of first name and last name is empty show error else take to step 2
     nextStep();
@@ -89,7 +97,7 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
                     type="file"
                     label="Carica"
                     id="formFile"
-                    onChange={(e) => setSelectedImage(e.target.files[0])}
+                    onChange={(e)=>{setImage(e.target.files[0])}}
                   />
                   {imageUrl && selectedImage && (
                     <div mt={2} textAlign="center">
@@ -112,7 +120,7 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
                     type="file"
                     label="Carica"
                     id="formFile"
-                    onChange={(e) => setSelectedImage2(e.target.files[0])}
+                    onChange={(e)=>{setImage2(e.target.files[0])}}
                   />
                   {imageUrl2 && selectedImage2 && (
                     <div mt={2} textAlign="center">
@@ -135,7 +143,7 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
                     type="file"
                     label="Carica"
                     id="formFile"
-                    onChange={(e) => setSelectedImage3(e.target.files[0])}
+                    onChange={(e)=>{setImage3(e.target.files[0])}}
                   />
                   {imageUrl3 && selectedImage3 && (
                     <div mt={2} textAlign="center">

@@ -8,6 +8,8 @@ import ScrollParallax from "../../../../components/ScrollParallax";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import firebase from 'firebase/compat/app';
+import storage from 'firebase/compat';
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import 'firebase/compat/firestore';
 
 const Final = ({ prevStep, nextStep, handleFormData, values }) => {
@@ -31,7 +33,7 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
     massimizzare,
     acconsente,
     note,
-    infosensibil,
+    infosensibili,
     liberatoriaMedica,
   } = values;
   const [error, setError] = useState(false);
@@ -51,8 +53,52 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
   };
 
   const nextStep3 = () => {
-    db.collection("utenti")
-    .add(values)
+
+    if(values.fotoLaterale == null)
+      return;
+      
+      var today = new Date(),
+      date = today.getFullYear() + '_' + (today.getMonth() + 1) + '_' + today.getDate() + '_' + today.getHours() + '_' + today.getMinutes();
+
+      const storage = getStorage();
+      const storageRef = ref(storage, `/${values.firstName}_${date}/${values.fotoLaterale.name}`);
+      uploadBytes(storageRef, values.fotoLaterale)
+
+      const storageRef2 = ref(storage, `/${values.firstName}_${date}/${values.fotoFrontale.name}`);
+      uploadBytes(storageRef2, values.fotoFrontale)
+
+      const storageRef3 = ref(storage, `/${values.firstName}_${date}/${values.fotoDietro.name}`);
+      uploadBytes(storageRef3, values.fotoDietro)
+
+      let urlFotoLaterale = "/" + values.firstName + "_" + date + "/" + values.fotoLaterale.name;
+      let urlfotoFrontale = "/" + values.firstName + "_" + date + "/" + values.fotoFrontale.name;
+      let urlfotoDietro = "/" + values.firstName + "_" + date + "/" + values.fotoDietro.name;
+
+      const dataToSave = {
+        firstName: values.firstName,
+        età: values.età,
+        sesso: values.sesso,
+        email: values.email,
+        peso: values.peso,
+        altezza: values.altezza,
+        stileVita: values.stileVita,
+        problemi: values.problemi,
+        fotoLaterale: urlFotoLaterale,
+        fotoFrontale: urlfotoFrontale, 
+        fotoDietro: urlfotoDietro,
+        obiettivo: values.obiettivo,
+        tipoAllenamento: values.tipoAllenamento,
+        tempoSala: values.tempoSala,
+        inSala: values.inSala,
+        massimizzare: values.massimizzare,
+        acconsente: values.acconsente,
+        note: values.note,
+        infosensibili: values.infosensibili,
+        liberatoriaMedica: values.liberatoriaMedica,
+      }
+
+    db.collection("scheda_palestra")
+    .add(dataToSave)
     .then(() => {
       nextStep();
     });

@@ -8,6 +8,8 @@ import ScrollParallax from "../../../../components/ScrollParallax";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import firebase from 'firebase/compat/app';
+import storage from 'firebase/compat';
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import 'firebase/compat/firestore';
 
 const Final = ({ prevStep, nextStep, handleFormData, values }) => {
@@ -56,8 +58,58 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
   };
 
   const nextStep3 = () => {
-    db.collection("utenti")
-    .add(values)
+
+    if(values.fotoLaterale == null)
+      return;
+      
+      var today = new Date(),
+      date = today.getFullYear() + '_' + (today.getMonth() + 1) + '_' + today.getDate() + '_' + today.getHours() + '_' + today.getMinutes();
+
+      const storage = getStorage();
+      const storageRef = ref(storage, `/${values.firstName}_${date}/${values.fotoLaterale.name}`);
+      uploadBytes(storageRef, values.fotoLaterale)
+
+      const storageRef2 = ref(storage, `/${values.firstName}_${date}/${values.fotoFrontale.name}`);
+      uploadBytes(storageRef2, values.fotoFrontale)
+
+      const storageRef3 = ref(storage, `/${values.firstName}_${date}/${values.fotoDietro.name}`);
+      uploadBytes(storageRef3, values.fotoDietro)
+
+      let urlFotoLaterale = "/" + values.firstName + "_" + date + "/" + values.fotoLaterale.name;
+      let urlfotoFrontale = "/" + values.firstName + "_" + date + "/" + values.fotoFrontale.name;
+      let urlfotoDietro = "/" + values.firstName + "_" + date + "/" + values.fotoDietro.name;
+
+      const dataToSave = {
+        firstName: values.firstName,
+        età: values.età,
+        sesso: values.sesso,
+        email: values.email,
+        peso: values.peso,
+        altezza: values.altezza,
+        fotoLaterale: urlFotoLaterale,
+        fotoFrontale: urlfotoFrontale, 
+        fotoDietro: urlfotoDietro,
+        allergie: values.allergie,
+        allergie_altro: values.allergie_altro,
+        farmaci: values.farmaci, 
+        intestino: values.intestino,
+        intestino_altro: values.intestino_altro,
+        non_piace: values.non_piace,
+        non_piace_altro: values.non_piace_altro,
+        quanti_pasti: values.quanti_pasti,
+        pasti_fuori: values.pasti_fuori,
+        integratori: values.integratori,
+        acconsente: values.acconsente,
+        note: values.note,
+        infosensibili: values.infosensibili,
+        liberatoriaMedica: values.liberatoriaMedica,
+        stileVita: values.stileVita,
+        sport: values.sport,
+        obiettivo: values.obiettivo,
+      }
+
+    db.collection("scheda_nutrizione")
+    .add(dataToSave)
     .then(() => {
       nextStep();
     });
