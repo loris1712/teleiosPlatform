@@ -61,18 +61,18 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
       date = today.getFullYear() + '_' + (today.getMonth() + 1) + '_' + today.getDate() + '_' + today.getHours() + '_' + today.getMinutes();
 
       const storage = getStorage();
-      const storageRef = ref(storage, `/${values.firstName}_${date}/${values.fotoLaterale.name}`);
+      const storageRef = ref(storage, `/P_${values.firstName}_${date}/${values.fotoLaterale.name}`);
       uploadBytes(storageRef, values.fotoLaterale)
 
-      const storageRef2 = ref(storage, `/${values.firstName}_${date}/${values.fotoFrontale.name}`);
+      const storageRef2 = ref(storage, `/P_${values.firstName}_${date}/${values.fotoFrontale.name}`);
       uploadBytes(storageRef2, values.fotoFrontale)
 
-      const storageRef3 = ref(storage, `/${values.firstName}_${date}/${values.fotoDietro.name}`);
+      const storageRef3 = ref(storage, `/P_${values.firstName}_${date}/${values.fotoDietro.name}`);
       uploadBytes(storageRef3, values.fotoDietro)
 
-      let urlFotoLaterale = "/" + values.firstName + "_" + date + "/" + values.fotoLaterale.name;
-      let urlfotoFrontale = "/" + values.firstName + "_" + date + "/" + values.fotoFrontale.name;
-      let urlfotoDietro = "/" + values.firstName + "_" + date + "/" + values.fotoDietro.name;
+      let urlFotoLaterale = "/P_" + values.firstName + "_" + date + "/" + values.fotoLaterale.name;
+      let urlfotoFrontale = "/P_" + values.firstName + "_" + date + "/" + values.fotoFrontale.name;
+      let urlfotoDietro = "/P_" + values.firstName + "_" + date + "/" + values.fotoDietro.name;
 
       const dataToSave = {
         firstName: values.firstName,
