@@ -8,25 +8,25 @@ import ScrollParallax from "../../../components/ScrollParallax";
 
 const items = [
   {
-    title: "For the beginners",
+    title: "Pacchetto Silver",
     color: "#45B26B",
     images: "/images/content/user.svg",
     alt: "user",
-    content: "You never workout before, it’s now a good start",
+    content: "€ 64",
   },
   {
-    title: "Advanced classes",
+    title: "Pacchetto Gold",
     color: "#9757D7",
     images: "/images/content/medal-1.svg",
     alt: "medal",
-    content: "You never workout before, it’s now a good start",
+    content: "€ 164",
   },
   {
-    title: "Premium (limited)",
+    title: "Pacchetto Platinum",
     color: "#3772FF",
     images: "/images/content/lightning.svg",
     alt: "lightning",
-    content: "You never workout before, it’s now a good start",
+    content: "€ 269",
   },
 ];
 
@@ -79,9 +79,9 @@ const Book = () => {
           </ScrollParallax>
         </div>
         <div className={styles.wrap}>
-          <h2 className={cn("h2", styles.title)}>Diversi livelli</h2>
+          <h2 className={cn("h2", styles.title)}>Diversi pacchetti</h2>
           <div className={styles.info}>
-            Possiamo pensare di selezionare diverse tipologie di scheda
+            Scegli il pacchetto che fa su misura per te
           </div>
           <div className={styles.list}>
             {items.map((x, index) => (
@@ -100,12 +100,11 @@ const Book = () => {
             ))}
           </div>
           <div className={styles.note}>
-            <strong className={styles.green}>10% Discount</strong> if you’re
-            already using the{" "}
-            <strong className={styles.black}>Fitness Pro</strong> on App Store
+            <strong className={styles.green}>10% di sconto</strong> se porti un tuo amico{" "}
+            <strong className={styles.black}>su Teleios</strong>per comprare una scheda
           </div>
           <div className={styles.btns}>
-            <Link className={cn("button", styles.button)} to="/class02-details">
+            <Link className={cn("button", styles.button)} to="/program2">
               <span>Crea scheda</span>
               <Icon name="arrow-right" size="10" />
             </Link>

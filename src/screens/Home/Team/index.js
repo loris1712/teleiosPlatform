@@ -54,7 +54,7 @@ const Team = () => {
       <div className={cn("container", styles.container)}>
         <div className={styles.head}>
           <h2 className={cn("h2", styles.title)}>I professionisti</h2>
-          <div className={styles.info}>Inserire giovanni e roberto</div>
+          <div className={styles.info}>Mettiamo a disposizione i migliori professionisti per curare il tuo corpo</div>
           <div className={styles.nav}>
             {trainersList.map((x, index) => (
               <button

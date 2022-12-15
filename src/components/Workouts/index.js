@@ -6,11 +6,11 @@ import Image from "../Image";
 import ScrollParallax from "../ScrollParallax";
 
 const items = [
-  "Fitness Pro Cloud",
-  "Syncs with Google Fit",
-  "Syncs with Apple Health",
-  "Track your progress easily",
-  "Intuitive and clean design",
+  "Creazione scheda automatica",
+  "Su misura per te",
+  "Palestra e nutrizione",
+  "Supporto degli esperti",
+  "Rinnovi quando vuoi",
 ];
 
 const Workouts = () => {
@@ -44,11 +44,10 @@ const Workouts = () => {
         </div>
         <div className={styles.wrap}>
           <h2 className={cn("h2", styles.title)}>
-            Inizia il tuo percorso, <br></br>crea la tua scheda
+            Inizia il tuo percorso ora, <br></br>crea la tua scheda
           </h2>
           <div className={styles.info}>
-            Fitness Pro helps track your workouts, get better results, and be
-            the best version of you. Less thinking!
+            Teleios ti aiuta a creare una scheda adatta alle tue esigenze, raggiungere risultati e trovare la versione migliore di te stesso.
           </div>
           <ul className={styles.list}>
             {items.map((x, index) => (
@@ -58,12 +57,12 @@ const Workouts = () => {
             ))}
           </ul>
           <div className={styles.btns}>
-            <Link className={cn("button", styles.button)} to="/pricing">
-              Scegli il piano
+            <Link className={cn("button", styles.button)} to="/program">
+              Scheda Nutrizione
             </Link>
-            <button className={cn("button-stroke", styles.button)}>
-              Richiedi una demo
-            </button>
+            <Link className={cn("button", styles.button)} to="/program2">
+              Scheda Palestra
+            </Link>
           </div>
         </div>
       </div>

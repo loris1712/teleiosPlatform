@@ -5,32 +5,32 @@ import ScrollParallax from "../../../components/ScrollParallax";
 
 const items = [
   {
-    title: "Download",
+    title: "Scegli la tipologia",
     color: "#3772FF",
     images: "/images/content/download.svg",
     content:
-      "Fitness Pro tracks your workouts, get better results, and be the best version of you.",
+      "Puoi selezionare la scheda palestra, nutrizione oppure entrambe.",
   },
   {
-    title: "Choose your trainner",
+    title: "Compila la scheda",
     color: "#9757D7",
     images: "/images/content/whistle.svg",
     content:
-      "Fitness Pro tracks your workouts, get better results, and be the best version of you.",
+      "Inserisci tutte le informazioni utili ai fini di ricevere una scheda personalizzata",
   },
   {
-    title: "Set the goals",
+    title: "Effettua il pagamento",
     color: "#EF466F",
     images: "/images/content/medal.svg",
     content:
-      "Fitness Pro tracks your workouts, get better results, and be the best version of you.",
+      "Revisiona tutte le tue informazioni e scegli tra il pacchetto Silver, Gold, Platinum.",
   },
   {
-    title: "Workout time",
+    title: "Ricevi la scheda",
     color: "#45B26B",
     images: "/images/content/stopwatch.svg",
     content:
-      "Fitness Pro tracks your workouts, get better results, and be the best version of you.",
+      "Entro massimo 24 ore riceverai la scheda su misura per te e potrai affidarti ai nostri Personal Trainer per allenarti.",
   },
 ];
 

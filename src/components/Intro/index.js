@@ -33,13 +33,13 @@ const Intro = ({ scrollToRef }) => {
         </div>
         <div className={styles.wrap}>
           <h2 className={cn("h1", styles.title)}>
-            Inseriamo un altro titolo che attira
+            Affidati ai migliori per la cura del tuo corpo
           </h2>
           <div className={styles.text}>
-            Descrizione di come fare una scheda 🔥🏀
+            Scegli la tipologia, crea la scheda e ricevila entro 24 ore. 🔥🏀
           </div>
-          <Link className={cn("button", styles.button)} to="/download">
-            Prova gratuita
+          <Link className={cn("button", styles.button)} to="/program">
+            Inizia ora
           </Link>
         </div>
       </div>

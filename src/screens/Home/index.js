@@ -29,7 +29,6 @@ const Home = () => {
       <Team />
       <Review className="section" />
       <Quality />
-      <Advantages />
       <Workouts />
       <Faq />
     </>
