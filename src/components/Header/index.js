@@ -110,7 +110,7 @@ const navLinks = [
   },
   {
     title: "Contattaci",
-    url: "/download",
+    url: "/contact",
   },
 ];
 

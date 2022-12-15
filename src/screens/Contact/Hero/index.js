@@ -22,19 +22,15 @@ const Hero = () => {
         <div className={styles.col}>
           <div className={styles.wrap}>
             <div className={cn("stage", styles.stage)}>
-              time to get fitness pro
+              Resta in contatto con noi
             </div>
             <h1 className={cn("h1", styles.title)}>
-              Fitness Pro for any device.
+              Contattaci via email
             </h1>
             <div className={styles.text}>
-              Track your workouts, get better results, and be the best version
-              of you. Less thinking, more lifting.
+            Teleios ti aiuta a creare una scheda adatta alle tue esigenze, raggiungere risultati e trovare la versione migliore di te stesso.
             </div>
-            <Subscription
-              className={styles.subscription}
-              placeholder="Enter your email"
-            />
+            <a className={styles.buttonEmail} href  = "mailto: abc@example.com">Invia Email</a>
           </div>
         </div>
       </div>
