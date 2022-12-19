@@ -8,46 +8,18 @@ import styles from "./Comment.module.sass";
 
 const items = [
   {
-    title: "Fitness",
-    url: "/class02-details",
+    title: "Palestra",
+    url: "/program2",
     image: "/images/content/plates.png",
     image2x: "/images/content/plates@2x.png",
-    content: "Great physique",
+    content: "Ottimo fisico",
   },
   {
-    title: "Gymnastic",
-    url: "/class02-details",
-    image: "/images/content/yoga-mat.png",
-    image2x: "/images/content/yoga-mat@2x.png",
-    content: "Enhanced strength",
-  },
-  {
-    title: "Basketball",
-    url: "/class02-details",
-    image: "/images/content/ball.png",
-    image2x: "/images/content/ball@2x.png",
-    content: "Relax $ work efficiently",
-  },
-  {
-    title: "Yoga",
-    url: "/class02-details",
-    image: "/images/content/yoga-mat.png",
-    image2x: "/images/content/yoga-mat@2x.png",
-    content: "Perfect physique",
-  },
-  {
-    title: "Fitness",
-    url: "/class02-details",
-    image: "/images/content/plates.png",
-    image2x: "/images/content/plates@2x.png",
-    content: "Great physique",
-  },
-  {
-    title: "Gymnastic",
-    url: "/class02-details",
-    image: "/images/content/yoga-mat.png",
-    image2x: "/images/content/yoga-mat@2x.png",
-    content: "Enhanced strength",
+    title: "Nutrizione",
+    url: "/program",
+    image: "/images/content/apple.png",
+    image2x: "/images/content/apple@2x.png",
+    content: "Ottima alimentazione",
   },
 ];
 
@@ -98,11 +70,10 @@ const Comment = () => {
       <div className={cn("container", styles.container)}>
         <div className={styles.wrapper}>
           <div className={styles.head}>
-            <h2 className={cn("h2", styles.title)}>Find what moves you</h2>
+            <h2 className={cn("h2", styles.title)}>Trova ciò che ti muove</h2>
             <div className={styles.info}>
-              Whether you’re a complete beginner or you want to step up your
-              routine, get the full studio experience at home with thousands of
-              classes for body, mind, and spirit.
+            Che tu sia un principiante assoluto o che tu voglia intensificare il tuo
+              routine, ottieni l'esperienza completa per la tua attività fisica e il tuo benessere alimentare.
             </div>
           </div>
           <div className={styles.wrap}>

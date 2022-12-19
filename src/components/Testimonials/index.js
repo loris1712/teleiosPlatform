@@ -12,7 +12,7 @@ const items = [
       {
         author: "Megane Schumm",
         description: "Legacy Data Coordinator",
-        logo: "/images/content/goldlines.svg",
+        logo: "/images/logo1.png",
         image: "/images/content/trainer-pic.png",
         image2x: "/images/content/trainer-pic@2x.png",
         comment:
@@ -28,7 +28,7 @@ const items = [
       {
         author: "Megane Schumm",
         description: "Legacy Data Coordinator",
-        logo: "/images/content/velocity9.svg",
+        logo: "/images/logo1.png",
         image: "/images/content/trainer-pic.png",
         image2x: "/images/content/trainer-pic@2x.png",
         comment:
@@ -44,7 +44,7 @@ const items = [
       {
         author: "Megane Schumm",
         description: "Legacy Data Coordinator",
-        logo: "/images/content/goldlines.svg",
+        logo: "/images/logo1.png",
         image: "/images/content/trainer-pic.png",
         image2x: "/images/content/trainer-pic@2x.png",
         comment:
@@ -60,7 +60,7 @@ const items = [
       {
         author: "Megane Schumm",
         description: "Legacy Data Coordinator",
-        logo: "/images/content/goldlines.svg",
+        logo: "/images/logo1.png",
         image: "/images/content/trainer-pic.png",
         image2x: "/images/content/trainer-pic@2x.png",
         comment:

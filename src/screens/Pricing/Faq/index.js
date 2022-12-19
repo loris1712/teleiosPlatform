@@ -28,7 +28,7 @@ const items = [
       },
     ],
   },
-  {
+  /*{
     title: "Trainers",
     items: [
       {
@@ -90,7 +90,7 @@ const items = [
         title: "Do I need to buy a yoga mat, towel, or equipment? ",
       },
     ],
-  },
+  },*/
 ];
 
 const Team = () => {
@@ -104,12 +104,11 @@ const Team = () => {
       <div className={cn("container", styles.container)}>
         <div className={styles.top}>
           <div className={cn("stage-small", styles.stage)}>
-            learn how to get started
+            scopri come iniziare
           </div>
-          <h2 className={cn("h2", styles.title)}>Frequently Asked Questions</h2>
+          <h2 className={cn("h2", styles.title)}>Domande frequenti</h2>
           <div className={styles.info}>
-            Join Fitness Pro community now to get free updates and also alot of
-            freebies are waiting for you or <a href="/#">Contact Support</a>
+            Se vuoi ricevere notizie e aggiornamenti riguardo l'espansione di Teleios <a href="/contact">Contattaci ora</a>
           </div>
           <div className={styles.nav}>
             {items.map((x, index) => (

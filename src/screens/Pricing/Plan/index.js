@@ -5,7 +5,7 @@ import Icon from "../../../components/Icon";
 
 const options = [
   {
-    title: "Main features",
+    title: "Principali vantaggi",
     items: [
       {
         title: "Time-Trackers",
@@ -53,12 +53,12 @@ const options = [
 
 const data = [
   {
-    title: "Free Trial",
+    title: "Silver",
     color: "#9757D7",
-    description: "14 days of free trial",
-    price: "0",
-    note: "per month",
-    button: "Start free trial",
+    description: "1 mese",
+    price: "64",
+    note: "al mese",
+    button: "Crea la scheda",
     options: [
       "true",
       "true",
@@ -73,12 +73,12 @@ const data = [
     ],
   },
   {
-    title: "Premium",
+    title: "Gold",
     color: "#FF592C",
-    description: "Fit with everyone",
-    price: "20.88",
-    note: "per month",
-    button: "Get Started",
+    description: "3 mesi",
+    price: "164",
+    note: "al mese",
+    button: "Crea la scheda",
     options: [
       "true",
       "true",
@@ -93,10 +93,12 @@ const data = [
     ],
   },
   {
-    title: "Unlimited Access",
+    title: "Platinum",
     color: "#EF466F",
-    description: "Are you pro? Let’s do it",
-    button: "Contact Sale",
+    price: "269",
+    description: "6 mesi",
+    note: "al mese",
+    button: "Crea la scheda",
     options: [
       "true",
       "true",
@@ -136,10 +138,10 @@ const Plan = () => {
     <div className={cn("section-bg", styles.section)}>
       <div className={cn("container", styles.container)}>
         <div className={cn("stage", styles.stage)}>
-          get stronger with fitness pro
+        DIVENTA PIÙ FORTE CON FITNESS PRO
         </div>
         <h1 className={cn("h1", styles.title)}>
-          Choose a plan that’s right for you
+        Scegli il piano adatto a te
         </h1>
         <div className={styles.table}>
           <div className={styles.row}>
@@ -174,7 +176,7 @@ const Plan = () => {
                   {type.price && (
                     <>
                       <div className={styles.cost}>
-                        <span className={styles.sign}>$</span>{" "}
+                        <span className={styles.sign}>€</span>{" "}
                         <span className={styles.price}>{type.price}</span>
                       </div>
                       <div className={styles.note}>{type.note}</div>
@@ -188,7 +190,7 @@ const Plan = () => {
                     })}
                     onClick={() => handleClick(index)}
                   >
-                    See all features
+                    Vedi tutti i vantaggi
                     <Icon name="arrow-bottom" size="9" />
                   </div>
                   <div

@@ -32,9 +32,6 @@ const Item = ({ item }) => {
             <div className={styles.author}>{item.author}</div>
             <div className={styles.description}>{item.description}</div>
           </div>
-          <button className={cn("button-stroke", styles.button)}>
-            Read full story
-          </button>
         </div>
         <div className={styles.col}>
           <div className={styles.preview}>

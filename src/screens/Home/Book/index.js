@@ -100,8 +100,8 @@ const Book = () => {
             ))}
           </div>
           <div className={styles.note}>
-            <strong className={styles.green}>10% di sconto</strong> se porti un tuo amico{" "}
-            <strong className={styles.black}>su Teleios</strong>per comprare una scheda
+            <strong className={styles.green}>10% di sconto </strong> se porti un tuo amico{" "}
+            <strong className={styles.black}> su Teleios </strong> per comprare una scheda
           </div>
           <div className={styles.btns}>
             <Link className={cn("button", styles.button)} to="/program2">

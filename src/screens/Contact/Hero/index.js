@@ -11,10 +11,10 @@ const Hero = () => {
         <div className={styles.col}>
           <div className={styles.preview}>
             <Image
-              srcSet="/images/content/download-pic@2x.png 2x"
-              srcSetDark="/images/content/download-pic-dark@2x.png 2x"
-              src="/images/content/download-pic.png"
-              srcDark="/images/content/download-pic-dark.png"
+              srcSet="https://img.freepik.com/free-photo/young-muscular-athlete-practicing-gym-with-weights_155003-35492.jpg?w=1060&t=st=1671492926~exp=1671493526~hmac=138bb0b4b229db7277cea3ebe0f872b09e318df61ed3395bb26d1fe8e872f0a8 2x"
+              srcSetDark="https://img.freepik.com/free-photo/young-muscular-athlete-practicing-gym-with-weights_155003-35492.jpg?w=1060&t=st=1671492926~exp=1671493526~hmac=138bb0b4b229db7277cea3ebe0f872b09e318df61ed3395bb26d1fe8e872f0a8 2x"
+              src="https://img.freepik.com/free-photo/young-muscular-athlete-practicing-gym-with-weights_155003-35492.jpg?w=1060&t=st=1671492926~exp=1671493526~hmac=138bb0b4b229db7277cea3ebe0f872b09e318df61ed3395bb26d1fe8e872f0a8"
+              srcDark="https://img.freepik.com/free-photo/young-muscular-athlete-practicing-gym-with-weights_155003-35492.jpg?w=1060&t=st=1671492926~exp=1671493526~hmac=138bb0b4b229db7277cea3ebe0f872b09e318df61ed3395bb26d1fe8e872f0a8"
               alt="Download bg"
             />
           </div>
