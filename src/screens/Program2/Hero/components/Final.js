@@ -70,6 +70,11 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
       const storageRef3 = ref(storage, `/P_${values.firstName}_${date}/${values.fotoDietro.name}`);
       uploadBytes(storageRef3, values.fotoDietro)
 
+      getDownloadURL(ref(storage, `/P_${values.firstName}_${date}/${values.fotoLaterale.name}`))
+        .then((url) => {
+          console.log(url)
+        })
+
       let urlFotoLaterale = "/P_" + values.firstName + "_" + date + "/" + values.fotoLaterale.name;
       let urlfotoFrontale = "/P_" + values.firstName + "_" + date + "/" + values.fotoFrontale.name;
       let urlfotoDietro = "/P_" + values.firstName + "_" + date + "/" + values.fotoDietro.name;

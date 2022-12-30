@@ -53,10 +53,6 @@ const ModalTrainer = ({ item, visible, onClose }) => {
           </a>
         ))}
       </div>
-      <Subscription
-        className={styles.subscription}
-        placeholder="Find a class"
-      />
       <div className={styles.wrap}>
         <Slider className="trainer-slider" {...settings}>
           {item.courses.map((x, index) => (

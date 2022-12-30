@@ -6,21 +6,21 @@ import ScrollParallax from "../../../components/ScrollParallax";
 
 const items = [
   {
-    title: "Intuitive and clean design",
+    title: "Design intuitivo e pulito",
     content:
-      "Track your workouts, get better results, and be the best version of you.",
+      "Pronto all'utilizzo e veloce da utilizzare.",
     color: "#9757D7",
   },
   {
-    title: "An exercise in simplicity",
+    title: "Un esercizio di semplicità",
     content:
-      "Track your workouts, get better results, and be the best version of you.",
+      "Esercizi, programmi e diete su misura per le tue esigenze e i tuoi impegni.",
     color: "#EF466F",
   },
   {
-    title: "The most popular workouts",
+    title: "Seguito/a da professionisti",
     content:
-      "Track your workouts, get better results, and be the best version of you.",
+      "Dopo aver selezionato il pacchetto, i nostri professionisti saranno presenti durante il tuo percorso.",
     color: "#45B26B",
   },
 ];
@@ -31,15 +31,15 @@ const About = () => {
       <div className={cn("container", styles.container)}>
         <div className={styles.row}>
           <div className={styles.col}>
-            <div className={cn("stage", styles.stage)}>fitness pro</div>
+            <div className={cn("stage", styles.stage)}>teleios</div>
           </div>
           <div className={styles.col}>
             <h2 className={cn("h2", styles.title)}>
-              Simple, powerful, <br></br>easy-to-use
+            Semplice, potente, <br></br>facile da usare
             </h2>
             <div className={styles.info}>
-              Track your workouts, get better results, and be the best version
-              of you. Less thinking, more lifting.
+            Tieni traccia dei tuoi allenamenti, ottieni risultati migliori e sii la versione migliore
+              di voi. Meno pensiero, più sollevamento.
             </div>
           </div>
         </div>

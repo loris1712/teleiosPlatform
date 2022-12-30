@@ -44,7 +44,7 @@ const Payment = ({ prevStep, nextStep, handleFormData, values }) => {
     <>
       <ScrollParallax className={cn("wrap", styles.wrap)}>
         <Card className={cn("final", styles.final)}>
-          <div style={{ display: "flex", width: "100%" }}>
+          <div style={{width: "100%" }}>
             <Card.Body
               className={cn("finalBody", styles.finalBody)}
               style={{ width: "50%" }}
@@ -78,7 +78,6 @@ const Payment = ({ prevStep, nextStep, handleFormData, values }) => {
             </Card.Body>
             <Card.Body
               className={cn("finalBody", styles.finalBody)}
-              style={{ width: "50%" }}
             >
               <p className={cn("finalBodyTitle", styles.finalBodyTitle)}>
                 Seleziona il tuo piano di pagamento

@@ -5,47 +5,11 @@ import Icon from "../../../components/Icon";
 
 const options = [
   {
-    title: "Principali vantaggi",
+    title: "Principali caratteristiche",
     items: [
       {
-        title: "Time-Trackers",
-        description: "Some Text",
-      },
-      {
-        title: "Exclusive Music",
-        description: "Some Text",
-      },
-      {
-        title: "E-books",
-        description: "Some Text",
-      },
-      {
-        title: "Documents",
-        description: "Some Text",
-      },
-      {
-        title: "Premium Tutorial",
-        description: "Some Text",
-      },
-      {
-        title: "Client Support",
-        description: "Some Text",
-      },
-      {
-        title: "Premium Courses",
-        description: "Some Text",
-      },
-      {
-        title: "User support",
-        description: "Some Text",
-      },
-      {
-        title: "Chat to trainers",
-        description: "Some Text",
-      },
-      {
-        title: "Unlimited Videos",
-        description: "Some Text",
+        title: "Supporto WhatsApp",
+        description: "Il professionista ti seguirà durante la settimana",
       },
     ],
   },
@@ -213,7 +177,7 @@ const Plan = () => {
                     className={cn(
                       { button: index === 0 },
                       { button: index === 1 },
-                      { "button-stroke": index === 2 },
+                      { button: index === 2 },
                       styles.button
                     )}
                   >

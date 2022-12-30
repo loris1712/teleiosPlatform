@@ -57,11 +57,16 @@ const Workouts = () => {
             ))}
           </ul>
           <div className={styles.btns}>
-            <Link className={cn("button", styles.button)} to="/program">
+            <Link className={cn("button-2", styles.button)} to="/program2">
+              Scheda Palestra
+            </Link>
+            <Link className={cn("button-2", styles.button)} to="/program">
               Scheda Nutrizione
             </Link>
-            <Link className={cn("button", styles.button)} to="/program2">
-              Scheda Palestra
+          </div>
+          <div className={styles.btns}>
+            <Link className={cn("button-3", styles.button)} to="/program">
+              Scheda Palestra + Nutrizione
             </Link>
           </div>
         </div>

@@ -8,25 +8,25 @@ import ScrollParallax from "../../../components/ScrollParallax";
 
 const items = [
   {
-    title: "The Fitness Pro Philosophy",
+    title: "La filosofia di Teleios",
     image: "/images/content/lifestyle-pic-1.png",
     image2x: "/images/content/lifestyle-pic-1@2x.png",
     content:
-      "Whether you’re a complete beginner or you want to step up your routine, get the full studio experience at home with thousands of classes for body, mind.",
+      "Che tu sia un principiante assoluto o desideri intensificare la tua routine, ottieni l'esperienza completa in studio a casa o in palestra con Teleios.",
   },
   {
-    title: "Quickly find the class you want",
+    title: "Crea rapidamente il programma che fa per te",
     image: "/images/content/lifestyle-pic-2.png",
     image2x: "/images/content/lifestyle-pic-2@2x.png",
     content:
-      "Whether you’re a complete beginner or you want to step up your routine, get the full studio experience at home with thousands of classes for body, mind.",
+      "In pochi passaggi puoi inviare tutte le richieste ai nostri professionisti per ricevere un programma dedicato.",
   },
   {
-    title: "Keep track of calories & macros",
+    title: "Insieme a noi tieni traccia dei tuoi progressi",
     image: "/images/content/lifestyle-pic-3.png",
     image2x: "/images/content/lifestyle-pic-3@2x.png",
     content:
-      "Whether you’re a complete beginner or you want to step up your routine, get the full studio experience at home with thousands of classes for body, mind.",
+      "Con il giusto tempo raggiungerai i tuoi obiettivi e noi ti aiuteremo a farlo e a monitorarli.",
   },
 ];
 
@@ -69,17 +69,16 @@ const Lifestyle = () => {
     <div className={cn("section-pb", styles.section)}>
       <div className={cn("container", styles.container)}>
         <div className={styles.head}>
-          <div className={cn("stage-small", styles.stage)}>explore the app</div>
-          <h2 className={cn("h2", styles.title)}>Fit for your life style</h2>
+          <div className={cn("stage-small", styles.stage)}>Esplora la piattaforma</div>
+          <h2 className={cn("h2", styles.title)}>Crea ora con la tua prima scheda</h2>
           <div className={styles.info}>
-            Get started with two free weeks of unlimited yoga, fitness, and
-            meditation classes.{" "}
+            Con un click inizi a compilare i campi, poi selezioni il pacchetto da seguire, ed entro 24 ore avrai il tuo programma su misura
           </div>
           <Link
             className={cn("button-stroke", styles.button)}
-            to="/class02-details"
+            to="/program3"
           >
-            <span>Join a class today</span>
+            <span>Inizia subito</span>
             <Icon name="arrow-right" size="10" />
           </Link>
         </div>

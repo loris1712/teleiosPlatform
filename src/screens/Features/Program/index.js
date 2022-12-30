@@ -36,7 +36,7 @@ const Program = () => {
         <div className={styles.wrap}>
           <div className={styles.col}>
             <div className={cn("stage-small", styles.stage)}>
-              explore fitness pro program
+              Inizia ora con la prima scheda
             </div>
             <div className={styles.list}>
               {items.map((x, index) => (
