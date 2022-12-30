@@ -7,8 +7,6 @@ import Testimonials from "../../components/Testimonials";
 const Class01 = () => {
   return (
     <>
-      <Breadcrumbs />
-      <Catalog />
       <Testimonials className="section-pb" />
     </>
   );

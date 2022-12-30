@@ -18,16 +18,9 @@ const Features = () => {
   return (
     <>
       <Hero scrollToRef={scrollToRef} />
-      <Intro scrollToRef={scrollToRef} />
       <ValueProps className="section-pb" />
-      <Program />
       <About />
-      <Review className="section-pb64" />
-      <Clients />
-      <Workouts />
       <Lifestyle />
-      <Advantages />
-      <Offer className="section" />
     </>
   );
 };

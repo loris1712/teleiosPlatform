@@ -129,8 +129,16 @@ const Hero = ({ scrollToRef }) => {
                 te con i migliori professionisti del settore.
               </div>
               <div className={styles.btns}>
-                <div className={cn("button", styles.button)} onClick={nextStep}>
-                  Inizia ora
+                <Link className={cn("button-2", styles.button)} to="/program2">
+                  Scheda Palestra
+                </Link>
+                <Link className={cn("button-2", styles.button)} to="/program">
+                  Scheda Nutrizione
+                </Link>
+              </div>
+              <div className={styles.btns}>
+                <div className={cn("button-3", styles.button)} onClick={nextStep}>
+                  Scheda Palestra + Nutrizione
                 </div>
               </div>
             </ScrollParallax>

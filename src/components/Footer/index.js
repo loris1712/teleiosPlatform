@@ -77,7 +77,7 @@ const Footer = () => {
                 className={styles.category}
                 onClick={() => setVisible(!visible)}
               >
-                footer nav
+                Menu
                 <Icon name="arrow-bottom" size="9" />
               </div>
               <div className={styles.menu}>
@@ -97,8 +97,8 @@ const Footer = () => {
           <div className={styles.col}>
             <div className={styles.category}>contatti</div>
             <div className={styles.info}>
-              <p>Via Tiberio Claudio Felice, 50, 84131 Salerno SA</p>
-              <p>Via Tiberio Claudio Felice, Milano, Italia</p>
+              <p>Via Tiberio Claudio Felice, 50, 84131 Salerno</p>
+              <p>Via Irno, 11 Ambulatorio Cutesan, Salerno</p>
               <p>+39 327 406 2756</p>
               <p>+39 330 602 145</p>
             </div>

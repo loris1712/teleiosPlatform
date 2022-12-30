@@ -12,7 +12,7 @@ const Hero = ({ scrollToRef }) => {
       <div className={cn("container", styles.container)}>
         <ScrollParallax className={styles.wrap}>
           <div className={cn("stage", styles.stage)}>
-            Mangia meglio. Allenati più forte 
+          Mangia bene. Allenati meglio
           </div>
           <h1 className={cn("h1", styles.title)}>
             Allenamento, nutrizione, benessere.
@@ -22,11 +22,16 @@ const Hero = ({ scrollToRef }) => {
             con i migliori professionisti.
           </div>
           <div className={styles.btns}>
-            <Link className={cn("button", styles.button)} to="/program2">
+            <Link className={cn("button-2", styles.button)} to="/program2">
               Scheda Palestra
             </Link>
-            <Link className={cn("button-stroke", styles.button)} to="/program">
-              Scheda nutrizione
+            <Link className={cn("button-2", styles.button)} to="/program">
+              Scheda Nutrizione
+            </Link>
+          </div>
+          <div className={styles.btns}>
+            <Link className={cn("button-3", styles.button)} to="/program">
+              Scheda Palestra + Nutrizione
             </Link>
           </div>
         </ScrollParallax>

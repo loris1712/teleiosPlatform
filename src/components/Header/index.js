@@ -202,18 +202,18 @@ const Headers = () => {
               ))}
             </div>
             <Link
-              className={cn("button-stroke button-small", styles.button)}
-              to="/program2"
+              className={cn("button button-small", styles.button)}
+              to="/program3"
             >
               Crea la tua scheda
             </Link>
           </div>
         </div>
         <Link
-          className={cn("button-stroke button-small", styles.button)}
+          className={cn("button button-small", styles.button)}
           to="/program3"
         >
-         Crea la scheda completa
+         Crea la tua scheda
         </Link>
         <button
           className={cn(styles.burger, { [styles.active]: visibleNav })}

@@ -584,27 +584,6 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
                 </div>
               </div>
             </div>
-            <p className={cn("finalBodyTitle2", styles.finalBodyTitle2)}>
-              Il tuo andamento è
-            </p>
-            <div className={cn("finalBodyCard", styles.finalBodyCard)}>
-              <div
-                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
-              >
-                <div
-                  className={cn(
-                    "finalBodyCardInfoElem",
-                    styles.finalBodyCardInfoElem
-                  )}
-                >
-                  <Image
-                    srcDark="/goodFace.png"
-                    alt="Teleios"
-                    style={{ width: "100px" }}
-                  />
-                </div>
-              </div>
-            </div>
           </Card.Body>
         </Card>
       </ScrollParallax>

@@ -681,25 +681,34 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
           </Card.Body>
 
           <Card.Body className={cn("finalBody", styles.finalBody)}>
-            <p className={cn("finalBodyTitle2", styles.finalBodyTitle2)}>
-              Il tuo andamento è
-            </p>
-            <div className={cn("finalBodyCard", styles.finalBodyCard)}>
+            <div
+              className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
+              style={{ marginBottom: "8rem" }}
+            >
               <div
-                className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
-                style={{ marginBottom: "8rem" }}
+                className={cn(
+                  "finalBodyCardInfoElem",
+                  styles.finalBodyCardInfoElem
+                )}
               >
-                <div
-                  className={cn(
-                    "finalBodyCardInfoElem",
-                    styles.finalBodyCardInfoElem
-                  )}
-                >
-                  <Image
-                    srcDark="/goodFace.png"
-                    alt="Teleios"
-                    style={{ width: "100px" }}
-                  />
+                <div style={{ width: "60%" }}>
+                  <p
+                    className={cn(
+                      "finalBodyCardInfoElemTitle",
+                      styles.finalBodyCardInfoElemTitle
+                    )}
+                    style={{ marginLeft: "0!important" }}
+                  >
+                    Note
+                  </p>
+                  <p
+                    className={cn(
+                      "finalBodyCardInfoElemSubtitle",
+                      styles.finalBodyCardInfoElemSubtitle
+                    )}
+                  >
+                    {note}
+                  </p>
                 </div>
               </div>
             </div>
