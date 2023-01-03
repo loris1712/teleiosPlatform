@@ -303,6 +303,7 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
               <div
                 className={cn("finalBodyCardLine", styles.finalBodyCardLine)}
               >
+                 {values.fotoLaterale && 
                 <div>
                   <p
                     className={cn(
@@ -314,10 +315,14 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
                   </p>
                   <div
                     className={cn("imageDiv", styles.imageDiv)}
-                    style={{ backgroundImage: "url(" + fotoLaterale + ")" }}
+                    style={{ backgroundImage: "url(" + URL.createObjectURL(values.fotoLaterale) + ")" }}
                     width="100%"
                   ></div>
                 </div>
+                }
+
+
+                {values.fotoFrontale && 
                 <div>
                   <p
                     className={cn(
@@ -329,10 +334,13 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
                   </p>
                   <div
                     className={cn("imageDiv", styles.imageDiv)}
-                    style={{ backgroundImage: "url(" + fotoFrontale + ")" }}
+                    style={{ backgroundImage: "url(" + URL.createObjectURL(values.fotoFrontale) + ")" }}
                     width="100%"
                   ></div>
                 </div>
+                }
+                
+                {values.fotoDietro && 
                 <div>
                   <p
                     className={cn(
@@ -344,10 +352,11 @@ const Final = ({ prevStep, nextStep, handleFormData, values }) => {
                   </p>
                   <div
                     className={cn("imageDiv", styles.imageDiv)}
-                    style={{ backgroundImage: "url(" + fotoDietro + ")" }}
+                    style={{ backgroundImage: "url(" + URL.createObjectURL(values.fotoDietro) + ")" }}
                     width="100%"
                   ></div>
                 </div>
+                }
               </div>
             </div>
           </Card.Body>

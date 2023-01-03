@@ -20,35 +20,12 @@ const Item = ({ item }) => {
       </div>
       <div className={cn(styles.body, { [styles.visible]: visible })}>
         <div className={styles.row}>
-          <div className={styles.col}>
-            <div className={styles.preview}>
-              <img
-                srcSet="/images/content/faq-pic@2x.png 2x"
-                src="/images/content/faq-pic.png"
-                alt="About pic"
-              />
-              <button className={cn("play-small", styles.play)}>
-                <Icon name="play" size="14" />
-              </button>
-            </div>
-          </div>
-          <div className={styles.col}>
-            <div className={styles.info}>
-              You don’t need to do anything else
-            </div>
+          <div>
             <div className={styles.content}>
               <p>
-                Mix-and-match dozens of responsive elements to quickly configure
-                your favorite landing page layouts.
-              </p>
-              <p>
-                Or hit the ground running with 10 pre-built templates, all in
-                light or dark mode."{" "}
+              {item.text}
               </p>
             </div>
-            <button className={cn("button-stroke button-small", styles.button)}>
-              Learn more
-            </button>
           </div>
         </div>
       </div>

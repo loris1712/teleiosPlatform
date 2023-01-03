@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import Clients from "../../components/Clients";
 import Steps from "./Steps";
 import Intro from "../../components/Intro";
+import Book2 from "../../components/Book";
 import Book from "./Book";
 import ValueProps from "../../components/ValueProps";
 import About from "./About";
@@ -21,6 +22,7 @@ const Home = () => {
   return (
     <>
       <Hero scrollToRef={scrollToRef} />
+      <Book2 />
       <Clients />
       <Steps scrollToRef={scrollToRef} />
       <Intro />

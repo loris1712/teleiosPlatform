@@ -35,12 +35,17 @@
     margin-top: 1.5rem
     align-items: center
     display: flex
+    +d 
+        display: unset
     .number
         font-size: 24px
         line-height: 24px
         margin-right: 1rem
         font-weight: 600
         color: darken($green, 10)
+        +d 
+            margin-bottom: 1rem
+            margin-top: 1rem
 
 .subtitle
     font-size: 16px
@@ -124,6 +129,8 @@ input[type="checkbox"]:before
 
 .fileDiv
     display: flex
+    +d
+        display: unset
 
 .final
 
@@ -131,6 +138,8 @@ input[type="checkbox"]:before
     display: flex
     align-items: center
     margin-bottom: 6rem
+    +d 
+       margin-bottom: 3rem 
 
 .finalHeadLogo
     margin-right: 48px
@@ -139,6 +148,8 @@ input[type="checkbox"]:before
         margin-right: auto
     img
         width: 300px
+        +d
+           width: 170px 
 
 .finalHeadText
     width: fit-content
@@ -146,6 +157,9 @@ input[type="checkbox"]:before
     text-transform: uppercase
     font-weight: 600
     color: #188d74
+    +d
+        font-size: 12px
+        margin-left: 1rem
 
 .finalBody
     margin-top: 2rem
@@ -169,10 +183,16 @@ input[type="checkbox"]:before
     display: flex
     align-items: center
     margin-bottom: 2.5rem
+    +d 
+        display: inline
 
 .finalBodyCardInfo
     width: 50%
     margin-right: 4rem
+    +d 
+        width: 100%
+        margin-right: 0
+        margin-bottom: 2rem
 
 .finalBodyCardInfoTitle
     padding-bottom: 0.2rem
@@ -189,6 +209,8 @@ input[type="checkbox"]:before
     display: flex
     margin-right: 5rem
     width: 100%
+    +d
+        margin-bottom: 2rem
     img
         width: 100px
 
@@ -205,6 +227,8 @@ input[type="checkbox"]:before
     font-weight: 200
     color:#1e6f5c
     margin-bottom: 1rem
+    +d
+        margin-top: 2rem
 
 .finalBodyCardInfoElemSubtitle
     margin-left: 2rem
@@ -235,6 +259,11 @@ input[type="checkbox"]:before
     align-items: center
     margin-top: 0.5rem
     margin-bottom: 0.5rem
+    +d 
+        display: inline-block
+        margin-bottom: 1.2rem
+        margin-top: 1rem
+        width: 100%
     .finalBodyCardTablelineTitle
         font-size: 14px
         font-weight: 200

@@ -9,93 +9,33 @@ const items = [
     title: "General",
     items: [
       {
-        title: "How do I register for an in-person class?",
+        title: "Quali piani sono disponibili?",
+        text: "Hai a disposizione i piani singoli per entrambe le tipologie di schede (Nutrizione, Palestra) oppure i piani misti che comprendono Nutrizione + Palestra.",
       },
       {
-        title: "What is the status of my Fitness Pro membership?",
+        title: "Come faccio ad iniziare un piano di allenamento?",
+        text: "Puoi andare sulla voce in alto nel menu Crea la tua scheda, selezionare Nutrizione, Palestra oppure Entrambe. Successivamente puoi rispondere alle domande della scheda ed entro 24 ore riceverai la tua scheda direttamente via email.",
       },
       {
-        title: "How old does my child need to be to participate in class?",
+        title: "Come entro in contatto con un professionista?",
+        text: "Puoi contattarci via email oppure utilizzare la call di Presentazione di 15 minuti che si ha a disposizione per poter conoscere gli esperti e organizzare un piano di lavoro.",
       },
       {
-        title: "Do I have to be a member to take class?",
+        title: "In che modo è possibile pagare?",
+        text: "Attraverso carta di credito o di debito, apple pay e google pay. Utilizziamo la piattaforma Stripe per assicurare pagamenti sicuri e protetti.",
       },
       {
-        title: "Can I join a class once it’s in session?",
-      },
-      {
-        title: "Do I need to buy a yoga mat, towel, or equipment? ",
+        title: "E' possibile disdire il piano di abbonamento?",
+        text: "I nostri piani hanno la durata di 1, 3 oppure 6 mesi, dopo la scadenza del piano è possibile rinnovarlo oppure no. Il rinnovo non è automatico ma il cliente in totale autonomia sceglie liberamente se acquistare un altro piano. Durante i mesi in cui il piano è attivo non è possibile disdire il piano in corso.",
       },
     ],
   },
-  /*{
-    title: "Trainers",
-    items: [
-      {
-        title: "How do I register for an in-person class?",
-      },
-      {
-        title: "What is the status of my Fitness Pro membership?",
-      },
-      {
-        title: "Can I join a class once it’s in session?",
-      },
-      {
-        title: "Do I need to buy a yoga mat, towel, or equipment? ",
-      },
-    ],
-  },
-  {
-    title: "Subscription",
-    items: [
-      {
-        title: "How do I register for an in-person class?",
-      },
-      {
-        title: "What is the status of my Fitness Pro membership?",
-      },
-      {
-        title: "How old does my child need to be to participate in class?",
-      },
-      {
-        title: "Do I have to be a member to take class?",
-      },
-      {
-        title: "Can I join a class once it’s in session?",
-      },
-      {
-        title: "Do I need to buy a yoga mat, towel, or equipment? ",
-      },
-    ],
-  },
-  {
-    title: "Class",
-    items: [
-      {
-        title: "How do I register for an in-person class?",
-      },
-      {
-        title: "What is the status of my Fitness Pro membership?",
-      },
-      {
-        title: "How old does my child need to be to participate in class?",
-      },
-      {
-        title: "Do I have to be a member to take class?",
-      },
-      {
-        title: "Can I join a class once it’s in session?",
-      },
-      {
-        title: "Do I need to buy a yoga mat, towel, or equipment? ",
-      },
-    ],
-  },*/
 ];
 
 const Team = () => {
   const options = [];
   items.map((x) => options.push(x.title));
+  items.map((x) => options.push(x.text));
 
   const [category, setCategory] = useState(options[0]);
 

@@ -152,7 +152,7 @@ const Headers = () => {
           <Image
             className={styles.pic}
             src="/images/logo-dark.svg"
-            srcDark="/images/logo1.png"
+            srcDark="/images/logo2.png"
             alt="Teleios"
           />
         </Link>

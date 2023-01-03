@@ -5,6 +5,7 @@ import styles from "../Form.module.sass";
 import cn from "classnames";
 import ScrollParallax from "../../../../components/ScrollParallax";
 import Dropdown from "../../../../components/Dropdown";
+import Image from "../Image";
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -19,34 +20,35 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
   const [error, setError] = useState(false);
   const [step, setstep] = useState(1);
 
-  const [image, setImage] = useState('');
-  const [image2, setImage2] = useState('');
-  const [image3, setImage3] = useState('');
-
   const prevStep2 = () => {
     prevStep();
   };
+
+  const [file, setFile] = useState();
+    function handleChange(e) {
+        values.fotoLaterale = e.target.files[0];
+        setFile(URL.createObjectURL(e.target.files[0]));
+    }
+
+    const [file2, setFile2] = useState();
+    function handleChange2(e) {
+        values.fotoFrontale = e.target.files[0];
+        setFile2(URL.createObjectURL(e.target.files[0]));
+    }
+
+    const [file3, setFile3] = useState();
+    function handleChange3(e) {
+        values.fotoDietro = e.target.files[0];
+        setFile3(URL.createObjectURL(e.target.files[0]));
+    }
 
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
 
-    values.fotoLaterale = image;
-    values.fotoFrontale = image2;
-    values.fotoDietro = image3;
-
     // checking if value of first name and last name is empty show error else take to step 2
     nextStep();
   };
-
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [imageUrl, setImageUrl] = useState(null);
-
-  const [selectedImage2, setSelectedImage2] = useState(null);
-  const [imageUrl2, setImageUrl2] = useState(null);
-
-  const [selectedImage3, setSelectedImage3] = useState(null);
-  const [imageUrl3, setImageUrl3] = useState(null);
 
   const db = firebase.initializeApp({ apiKey: "AIzaSyDxSzPt14Y_njHuntVNiMHV5XT37Jh7Wxc",
   authDomain: "teleios-gym.firebaseapp.com",
@@ -60,26 +62,7 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
   const upload = ()=>{
     
   }
-
-  useEffect(() => {
-    if (selectedImage) {
-      setImageUrl(URL.createObjectURL(selectedImage));
-      handleFormData("fotoLaterale");
-    }
-    if (selectedImage2) {
-      setImageUrl2(URL.createObjectURL(selectedImage2));
-      handleFormData(imageUrl2);
-    }
-    if (selectedImage3) {
-      setImageUrl3(URL.createObjectURL(selectedImage3));
-      handleFormData(imageUrl3);
-    }
-  }, [selectedImage, selectedImage2, selectedImage3]);
-
-  values.fotoLaterale = imageUrl;
-  values.fotoFrontale = imageUrl2;
-  values.fotoDietro = imageUrl3;
-
+  
   return (
     <div>
       <ScrollParallax className={cn("wrap", styles.wrap)}>
@@ -119,18 +102,16 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
                     type="file"
                     label="Carica"
                     id="formFile"
-                    onChange={(e)=>{setImage(e.target.files[0])}}
+                    onChange={handleChange}
                     accept="/image/*"
                   />
-                  {imageUrl && selectedImage && (
-                    <div mt={2} textAlign="center">
+                  <div mt={2} textAlign="center">
                       <div
                         className={cn("imageDiv", styles.imageDiv)}
-                        style={{ backgroundImage: "url(" + imageUrl + ")" }}
+                        style={{ backgroundImage: "url(" + file + ")" }}
                         width="100%"
                       ></div>
                     </div>
-                  )}
                 </Form.Group>
 
                 <Form.Group
@@ -143,17 +124,16 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
                     type="file"
                     label="Carica"
                     id="formFile"
-                    onChange={(e)=>{setImage2(e.target.files[0])}}
+                    onChange={handleChange2}
+                    accept="/image/*"
                   />
-                  {imageUrl2 && selectedImage2 && (
-                    <div mt={2} textAlign="center">
+                  <div mt={2} textAlign="center">
                       <div
                         className={cn("imageDiv", styles.imageDiv)}
-                        style={{ backgroundImage: "url(" + imageUrl2 + ")" }}
+                        style={{ backgroundImage: "url(" + file2 + ")" }}
                         width="100%"
                       ></div>
                     </div>
-                  )}
                 </Form.Group>
 
                 <Form.Group
@@ -166,17 +146,16 @@ const Step7 = ({ prevStep, nextStep, handleFormData, values }) => {
                     type="file"
                     label="Carica"
                     id="formFile"
-                    onChange={(e)=>{setImage3(e.target.files[0])}}
+                    onChange={handleChange3}
+                    accept="/image/*"
                   />
-                  {imageUrl3 && selectedImage3 && (
-                    <div mt={2} textAlign="center">
+                  <div mt={2} textAlign="center">
                       <div
                         className={cn("imageDiv", styles.imageDiv)}
-                        style={{ backgroundImage: "url(" + imageUrl3 + ")" }}
+                        style={{ backgroundImage: "url(" + file3 + ")" }}
                         width="100%"
                       ></div>
                     </div>
-                  )}
                 </Form.Group>
               </div>
 
