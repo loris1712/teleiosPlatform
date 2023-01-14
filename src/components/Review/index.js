@@ -6,22 +6,22 @@ import styles from "./Review.module.sass";
 
 const items = [
   {
-    author: "Dorthy Runolfsdottir",
-    position: "Lead Visual Designer at UI8",
-    logo: "./images/content/velocity9.svg",
-    comment: "Qui mettiamo i feedbacks",
+    logo: "./images/content/attestati/giovanni1.jpg",
   },
   {
-    author: "Dorthy Runolfsdottir",
-    position: "Lead Visual Designer at UI8",
-    logo: "./images/content/travelers.svg",
-    comment: "Qui mettiamo i feedbacks",
+    logo: "./images/content/attestati/roberto1.jpg",
   },
   {
-    author: "Dorthy Runolfsdottir",
-    position: "Lead Visual Designer at UI8",
-    logo: "./images/content/goldlines.svg",
-    comment: "Qui mettiamo i feedbacks",
+    logo: "./images/content/attestati/roberto2.jpg",
+  },
+  {
+    logo: "./images/content/attestati/roberto3.jpg",
+  },
+  {
+    logo: "./images/content/attestati/roberto4.jpg",
+  },
+  {
+    logo: "./images/content/attestati/roberto5.jpg",
   },
 ];
 
@@ -51,13 +51,14 @@ const Review = ({ className }) => {
   return (
     <div className={cn(className, styles.section)}>
       <div className={cn("container", styles.container)}>
+      <h2 className={cn("h2", styles.title)}>Attestati</h2>
         <div className={styles.wrap}>
           <Slider className="review-slider" {...settings}>
             {items.map((x, index) => (
               <div className={styles.slide} key={index}>
                 <div className={cn("review-item", styles.item)}>
                   <div className={styles.logo}>
-                    <img src={x.logo} alt="Logo" />
+                    <img src={x.logo} alt="Logo" height="500px" />
                   </div>
                   <div className={styles.title}>{x.comment}</div>
                   <div className={styles.author}>{x.author}</div>

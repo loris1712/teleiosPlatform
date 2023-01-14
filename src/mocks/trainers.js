@@ -74,7 +74,7 @@ export const trainersList = [
     courses: [
       {
         name: "Roberto De Luca",
-        image: "/images/content/avatar-1.png",
+        image: "/images/content/roberto.jpg",
         position: "Personal Trainer",
         courses: courses,
         socials: socials,
@@ -86,7 +86,7 @@ export const trainersList = [
     courses: [
       {
         name: "Giovanni Santangelo",
-        image: "/images/content/avatar-3.png",
+        image: "/images/content/giovanni.jpg",
         position: "Nutrizionista",
         courses: courses,
         socials: socials,

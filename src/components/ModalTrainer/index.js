@@ -29,31 +29,7 @@ const ModalTrainer = ({ item, visible, onClose }) => {
     ),
   };
 
-  return (
-    <Modal
-      containerClassName={styles.container}
-      visible={visible}
-      onClose={onClose}
-    >
-      <div className={styles.avatar}>
-        <img src={item.image} alt={item.name} />
-      </div>
-      <div className={cn("h3", styles.trainer)}>{item.name}</div>
-      <div className={styles.position}>{item.position}</div>
-      <div className={styles.socials}>
-        {item.socials.map((x, index) => (
-          <a
-            className={styles.social}
-            href={x.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={index}
-          >
-            <Icon name={x.type} size={x.type === "twitter" ? 22 : 20} />
-          </a>
-        ))}
-      </div>
-      <div className={styles.wrap}>
+  /*<div className={styles.wrap}>
         <Slider className="trainer-slider" {...settings}>
           {item.courses.map((x, index) => (
             <div className={styles.slide} key={index} onClick={onClose}>
@@ -105,7 +81,33 @@ const ModalTrainer = ({ item, visible, onClose }) => {
         <button className={cn("button-small", styles.button)}>
           Browse all class
         </button>
+      </div> */
+
+  return (
+    <Modal
+      containerClassName={styles.container}
+      visible={visible}
+      onClose={onClose}
+    >
+      <div className={styles.avatar}>
+        <img src={item.image} alt={item.name} />
       </div>
+      <div className={cn("h3", styles.trainer)}>{item.name}</div>
+      <div className={styles.position}>{item.position}</div>
+      <div className={styles.socials}>
+        {item.socials.map((x, index) => (
+          <a
+            className={styles.social}
+            href={x.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={index}
+          >
+            <Icon name={x.type} size={x.type === "twitter" ? 22 : 20} />
+          </a>
+        ))}
+      </div>
+      
     </Modal>
   );
 };

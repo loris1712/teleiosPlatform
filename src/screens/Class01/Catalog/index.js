@@ -15,7 +15,7 @@ const items = [
     image2x: "/images/content/card-pic-1@2x.png",
     category: "green",
     categoryText: "yoga",
-    avatar: "/images/content/avatar-1.png",
+    avatar: "/images/content/roberto.jpg",
     trainer: "First name Last name",
     level: "green",
     levelText: "beginner",

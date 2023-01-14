@@ -3,6 +3,10 @@ import cn from "classnames";
 import styles from "./Item.module.sass";
 import Icon from "../../Icon";
 
+/*-<button className={cn("play", styles.play)}>
+              <Icon name="play" size="21" />
+            </button>*/
+
 const Item = ({ item }) => {
   return (
     <div className={styles.item}>
@@ -40,9 +44,7 @@ const Item = ({ item }) => {
               src={item.image}
               alt="Trainer pic"
             />
-            <button className={cn("play", styles.play)}>
-              <Icon name="play" size="21" />
-            </button>
+            
           </div>
         </div>
       </div>

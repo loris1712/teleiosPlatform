@@ -5,66 +5,66 @@ import Item from "./Item";
 
 const items = [
   {
-    name: "Jazmin Grady",
-    type: "Personal Trainer",
+    name: "Giorgio",
+    type: "Cliente Palestra",
     avatar: "/images/content/avatar-5.png",
     review: [
       {
-        author: "Megane Schumm",
-        description: "Legacy Data Coordinator",
+        author: "Giorgio",
+        description: "Cliente Palestra",
         logo: "/images/logo1.png",
         image: "/images/content/trainer-pic.png",
         image2x: "/images/content/trainer-pic@2x.png",
         comment:
-          "Fitness Pro is the greatest fitness app. It's clear the makers behind this thing use it every week, because it is so perfect.",
+          "I professionisti di Teleios riescono a capire le mie esigenze e a darmi indicazioni precise su come migliorare il mio corpo.",
       },
     ],
   },
   {
-    name: "Kaylah Botsford",
-    type: "Personal Trainer",
-    avatar: "/images/content/avatar-1.png",
+    name: "Caterina",
+    type: "Cliente Nutrizione",
+    avatar: "/images/content/avatar-6.png",
     review: [
       {
-        author: "Megane Schumm",
-        description: "Legacy Data Coordinator",
+        author: "Caterina",
+        description: "Cliente Nutrizione",
         logo: "/images/logo1.png",
         image: "/images/content/trainer-pic.png",
         image2x: "/images/content/trainer-pic@2x.png",
         comment:
-          "Fitness Pro is the greatest fitness app. ",
+          "Il piano nutrizionale che ho ricevuto è molto chiaro e mi ha aiutato a migliorare il mio fisico nel giusto tempo",
       },
     ],
   },
   {
-    name: "Reinhold Ullrich",
-    type: "Personal Trainer",
+    name: "Carlo",
+    type: "Cliente Palestra",
     avatar: "/images/content/avatar-2.png",
     review: [
       {
-        author: "Megane Schumm",
-        description: "Legacy Data Coordinator",
+        author: "Carlo",
+        description: "Cliente Palestra",
         logo: "/images/logo1.png",
         image: "/images/content/trainer-pic.png",
         image2x: "/images/content/trainer-pic@2x.png",
         comment:
-          "Fitness Pro is the greatest fitness app. It's clear the makers behind this thing use it every week, because it is so perfect.",
+          "E' incredibile come con 3 volte a settimana sono riuscito a migliorare il mio fisico sul medio periodo.",
       },
     ],
   },
   {
-    name: "Josh Bartoletti",
-    type: "Personal Trainer",
+    name: "Sara",
+    type: "Cliente Nutrizione",
     avatar: "/images/content/avatar-3.png",
     review: [
       {
-        author: "Megane Schumm",
-        description: "Legacy Data Coordinator",
+        author: "Sara",
+        description: "Cliente Nutrizione",
         logo: "/images/logo1.png",
         image: "/images/content/trainer-pic.png",
         image2x: "/images/content/trainer-pic@2x.png",
         comment:
-          "Fitness Pro is the greatest fitness app. It's clear the makers behind this thing use it every week, because it is so perfect.",
+          "E'stato incredibile come in 4 mesi sia riuscita a migliorare completamente il mio fisico, davvero grazie ai professionisti di Teleios.",
       },
     ],
   },

@@ -3,6 +3,8 @@ import React, { useRef } from "react";
 import Hero from "./Hero";
 import Clients from "../../components/Clients";
 import Steps from "./Steps";
+import FirstAfter from "./FirstAfter";
+import CalendlyBook from "./CalendlyBook";
 import Intro from "../../components/Intro";
 import Book2 from "../../components/Book";
 import Book from "./Book";
@@ -25,12 +27,13 @@ const Home = () => {
       <Book2 />
       <Clients />
       <Steps scrollToRef={scrollToRef} />
+      <CalendlyBook />
       <Intro />
+      <Review />
       <Book />
+      <FirstAfter />
       <ValueProps className="section" />
       <Team />
-      <Review className="section" />
-      <Quality />
       <Workouts />
       <Faq />
     </>

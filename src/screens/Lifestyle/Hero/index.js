@@ -45,7 +45,7 @@ const items = [
       {
         url: "/article",
         title: "7 Impossibly Hard Yoga Moves to Master",
-        avatar: "/images/content/avatar-1.png",
+        avatar: "/images/content/roberto.jpg",
         author: "Felipa Kub",
         date: "Feb 03, 2021",
         image: "/images/content/lifestyle-photo-4.png",
@@ -105,7 +105,7 @@ const items = [
       {
         url: "/article",
         title: "7 Impossibly Hard Yoga Moves to Master",
-        avatar: "/images/content/avatar-1.png",
+        avatar: "/images/content/roberto.jpg",
         author: "Felipa Kub",
         date: "Feb 03, 2021",
         image: "/images/content/lifestyle-photo-4.png",
@@ -176,7 +176,7 @@ const items = [
       {
         url: "/article",
         title: "7 Impossibly Hard Yoga Moves to Master",
-        avatar: "/images/content/avatar-1.png",
+        avatar: "/images/content/roberto.jpg",
         author: "Felipa Kub",
         date: "Feb 03, 2021",
         image: "/images/content/lifestyle-photo-4.png",
