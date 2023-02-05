@@ -13,7 +13,7 @@ const Steps = ({ scrollToRef }) => {
     <div className={cn("section", styles.section)} ref={scrollToRef}>
       <div className={cn("container", styles.container)}>
         <div className={styles.head}>
-          <h2 className={cn("h2", styles.title)}>Apuuntamento</h2>
+          <h2 className={cn("h2", styles.title)}>Appuntamento</h2>
           <div className={styles.info}>
             Prenota la tua chiamata di presentazione. Potrai conoscere i nostri esperti dal vivo e organizzare con loro il tuo piano ideale. 
           </div>

@@ -25,7 +25,7 @@ const Home = () => {
     <>
       <Hero scrollToRef={scrollToRef} />
       <Book2 />
-      <Clients />
+      {/*<Clients />*/}
       <Steps scrollToRef={scrollToRef} />
       <CalendlyBook />
       <Intro />

@@ -23,7 +23,7 @@ const items = [
     color: "#EF466F",
     images: "/images/content/stopwatch.svg",
     content:
-      "Entro massimo 24 ore riceverai la scheda su misura per te e potrai affidarti ai nostri Personal Trainer per allenarti.",
+      "Entro massimo 24 ore i nostri professionisti creeeranno la scheda su misura per te e potrai subito utilizzarla con il loro supporto.",
   },
 ];
 

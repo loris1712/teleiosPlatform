@@ -21,7 +21,7 @@ const data = [
     color: "#9757D7",
     description: "1 mese",
     price: "64",
-    note: "al mese",
+    note: "-",
     button: "Crea la scheda",
     options: [
       "true",
@@ -40,8 +40,8 @@ const data = [
     title: "Gold",
     color: "#FF592C",
     description: "3 mesi",
-    price: "164",
-    note: "al mese",
+    price: "164 ",
+    note: "Invece di € 192",
     button: "Crea la scheda",
     options: [
       "true",
@@ -61,7 +61,7 @@ const data = [
     color: "#EF466F",
     price: "269",
     description: "6 mesi",
-    note: "al mese",
+    note: "Invece di € 384",
     button: "Crea la scheda",
     options: [
       "true",
@@ -102,7 +102,7 @@ const Plan = () => {
     <div className={cn("section-bg", styles.section)}>
       <div className={cn("container", styles.container)}>
         <div className={cn("stage", styles.stage)}>
-        DIVENTA PIÙ FORTE CON FITNESS PRO
+        DIVENTA PIÙ FORTE CON TELEIOS
         </div>
         <h1 className={cn("h1", styles.title)}>
         Scegli il piano adatto a te

@@ -103,7 +103,7 @@ const Footer = () => {
               <p>+39 330 602 145</p>
             </div>
           </div>
-          <div className={styles.col}>
+          {/*<div className={styles.col}>
             <div className={styles.category}>newsletter</div>
             <div className={styles.info}>
               Iscriviti alla nostra newsletter per ottenere più corsi di design
@@ -113,13 +113,13 @@ const Footer = () => {
               className={styles.subscription}
               placeholder="Inserisci la tua email"
             />
-          </div>
+          </div>*/}
         </div>
       </div>
       <div className={styles.foot}>
         <div className={cn("container", styles.container)}>
           <div className={styles.copyright}>
-            Copyright © 2022. Tutti i diritti riservati.
+            Copyright © 2023. Tutti i diritti riservati. Made by Miutifin Project
           </div>
           <div className={styles.socials}>
             {socials.map((x, index) => (

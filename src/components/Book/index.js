@@ -8,7 +8,7 @@ const Book = ({ scrollToRef }) => {
   return (
     <div className={styles.section} ref={scrollToRef}>
       <div className={cn("container", styles.container)}>
-      <div className={styles.gallery}>
+      {/*<div className={styles.gallery}>
           <ScrollParallax className={styles.preview} animateIn="fadeInUp">
             <img
               srcSet="/images/content/bag@2x.png 2x"
@@ -30,7 +30,7 @@ const Book = ({ scrollToRef }) => {
               alt="Bottle"
             />
           </ScrollParallax>
-        </div>
+  </div>*/}
         <div className={styles.wrap}>
           <h2 className={cn("h1", styles.title)}>
             Prenota una chiamata gratuita con i nostri professionisti

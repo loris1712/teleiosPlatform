@@ -13,6 +13,8 @@ const items = [
     images: "/images/content/user.svg",
     alt: "user",
     content: "€ 64",
+    months: "1 mese",
+    sconto: "",
   },
   {
     title: "Pacchetto Gold",
@@ -20,6 +22,8 @@ const items = [
     images: "/images/content/medal-1.svg",
     alt: "medal",
     content: "€ 164",
+    months: "3 mesi",
+    sconto: "Invece di € 192",
   },
   {
     title: "Pacchetto Platinum",
@@ -27,14 +31,16 @@ const items = [
     images: "/images/content/lightning.svg",
     alt: "lightning",
     content: "€ 269",
+    months: "6 mesi",
+    sconto: "Invece di € 384",
   },
 ];
 
 const Book = () => {
   return (
-    <div className={cn("section-bg", styles.section)}>
+    <div className={cn("section", styles.section)}>
       <div className={cn("container", styles.container)}>
-        <div className={styles.gallery}>
+        {/*<div className={styles.gallery}>
           <div className={styles.preview}>
             <Image
               srcSet="/images/content/book-pic@2x.png 2x"
@@ -77,7 +83,7 @@ const Book = () => {
               alt="Dumbbells"
             />
           </ScrollParallax>
-        </div>
+        </div>*/}
         <div className={styles.wrap}>
           <h2 className={cn("h2", styles.title)}>Diversi pacchetti</h2>
           <div className={styles.info}>
@@ -94,7 +100,11 @@ const Book = () => {
                 </div>
                 <div className={styles.details}>
                   <div className={styles.subtitle}>{x.title}</div>
-                  <div className={styles.content}>{x.content}</div>
+                  <div className={styles.content}>{x.months}</div>
+                  <div className={styles.divFlex}>
+                    <div className={styles.sconto}>{x.sconto}&nbsp;&nbsp;</div>
+                    <div className={styles.price}>{x.content}</div>
+                  </div>
                 </div>
               </div>
             ))}

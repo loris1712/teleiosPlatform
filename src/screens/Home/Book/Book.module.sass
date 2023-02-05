@@ -2,9 +2,13 @@
 
 .section
     position: relative
+    background-image: url(../../../imgs/healthywomen.jpg)
+    background-repeat: no-repeat
+    background-size: cover
     +m
-        padding-top: 0
-        background: none
+        padding-top: 3rem
+        background-size: cover
+        background-position: center
 
 .container
     +m
@@ -109,12 +113,28 @@
 .subtitle
     margin-bottom: 4px
     font-weight: 600
+    font-size: 20px
 
 .content
     max-width: 260px
     font-size: 18px
     font-weight: 600
     color: $neutrals4
+
+.price
+    max-width: 260px
+    font-size: 18px
+    font-weight: 600
+    color: #29bb89
+
+.divFlex
+    display: flex
+    align-items: center
+
+.sconto
+    color: $pink
+    font-weight: 500
+    font-size: 14px
 
 .note
     margin-bottom: 24px

@@ -6,7 +6,7 @@ import Image from "../Image";
 import ScrollParallax from "../ScrollParallax";
 
 const items = [
-  "Creazione scheda automatica",
+  "Creazione scheda con dei professionisti",
   "Su misura per te",
   "Palestra e nutrizione",
   "Supporto degli esperti",
@@ -17,7 +17,7 @@ const Workouts = () => {
   return (
     <div className={styles.section}>
       <div className={cn("container", styles.container)}>
-        <div className={styles.gallery}>
+        {/*<div className={styles.gallery}>
           <div className={styles.preview}>
             <Image
               srcSet="/images/content/phones@2x.png 2x"
@@ -41,10 +41,10 @@ const Workouts = () => {
               alt="Apple"
             />
           </ScrollParallax>
-        </div>
+        </div>*/}
         <div className={styles.wrap}>
           <h2 className={cn("h2", styles.title)}>
-            Inizia il tuo percorso ora, <br></br>crea la tua scheda
+            Inizia il tuo percorso ora, crea la tua scheda
           </h2>
           <div className={styles.info}>
             Teleios ti aiuta a creare una scheda adatta alle tue esigenze, raggiungere risultati e trovare la versione migliore di te stesso.

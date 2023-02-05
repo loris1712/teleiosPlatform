@@ -18,8 +18,7 @@ const Hero = ({ scrollToRef }) => {
             Allenamento, nutrizione, benessere.
           </h1>
           <div className={styles.text}>
-            Crea la tua scheda nutrizione e la scheda palestra su misura per te
-            con i migliori professionisti.
+          Scegli la tipologia, fornisci le tue informazioni e i nostri professionisti creeranno la tua scheda per te.
           </div>
           <div className={styles.btns}>
             <Link className={cn("button-2", styles.button)} to="/program2">
@@ -41,7 +40,7 @@ const Hero = ({ scrollToRef }) => {
           }
           className={styles.scroll}
         />
-        <div className={styles.gallery}>
+        {/*<div className={styles.gallery}>
           <ScrollParallax className={styles.preview} animateIn="fadeInUp">
             <Image
               srcSet="/images/content/watch@2x.png 2x"
@@ -84,7 +83,7 @@ const Hero = ({ scrollToRef }) => {
               alt="Ball black"
             />
           </ScrollParallax>
-        </div>
+        </div>*/}
       </div>
     </div>
   );
